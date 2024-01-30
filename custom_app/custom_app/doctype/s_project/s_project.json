@@ -15,6 +15,7 @@
   "project_code",
   "project_name",
   "status",
+  "customer",
   "project_type",
   "is_active",
   "percent_complete_method",
@@ -28,18 +29,18 @@
   "planned_effort_hours",
   "actual_effort_hours",
   "customer_details",
-  "customer",
+  "column_break_paaj",
   "column_break_14",
   "sales_order",
   "users_section",
   "userss",
-  "section_break0",
-  "notes",
   "section_break_18",
   "actual_start_date",
   "actual_time",
   "column_break_20",
   "actual_end_date",
+  "section_break0",
+  "notes",
   "project_details",
   "estimated_costing",
   "total_costing_amount",
@@ -179,6 +180,7 @@
    "collapsible": 1,
    "fieldname": "customer_details",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Customer Details",
    "oldfieldtype": "Section Break",
    "options": "fa fa-user"
@@ -259,6 +261,7 @@
    "collapsible": 1,
    "fieldname": "project_details",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Costing and Billing",
    "oldfieldtype": "Section Break",
    "options": "fa fa-money"
@@ -330,6 +333,7 @@
    "collapsible": 1,
    "fieldname": "margin",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Margin",
    "oldfieldtype": "Column Break",
    "width": "50%"
@@ -359,6 +363,7 @@
    "collapsible": 1,
    "fieldname": "monitor_progress",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Monitor Progress"
   },
   {
@@ -503,13 +508,17 @@
    "fieldname": "task_counts",
    "fieldtype": "HTML",
    "label": "Task Counts"
+  },
+  {
+   "fieldname": "column_break_paaj",
+   "fieldtype": "Column Break"
   }
  ],
  "icon": "fa fa-puzzle-piece",
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 4,
- "modified": "2024-01-30 15:21:01.741605",
+ "modified": "2024-01-30 16:42:36.378315",
  "modified_by": "Administrator",
  "module": "custom_app",
  "name": "S Project",
