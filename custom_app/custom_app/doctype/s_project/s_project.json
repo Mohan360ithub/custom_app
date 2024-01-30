@@ -171,6 +171,7 @@
   {
    "fieldname": "department",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Department",
    "options": "Department"
   },
@@ -508,7 +509,7 @@
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 4,
- "modified": "2024-01-30 13:06:31.321279",
+ "modified": "2024-01-30 15:21:01.741605",
  "modified_by": "Administrator",
  "module": "custom_app",
  "name": "S Project",
