@@ -74,6 +74,10 @@ frappe.ui.form.on("S Project", {
 				createTask(frm);
 			}, __("Actions"));
 
+			frm.add_custom_button(__('Open Task'), () => {
+				opentask(frm);
+			}, __("Actions"));
+
 			// frm.trigger("set_project_status_button");
 
 
@@ -190,4 +194,20 @@ function createTask(frm) {
         project: project_code
         // Add other fields to pre-fill as needed
     });
+}
+
+
+function opentask(frm){
+	    if (frm.doc.name) {
+        // Construct the URL for the Todo List with the Lead name
+        var projectname = frm.doc.name;
+        var baseUrl = 'http://erp.360ithub.com/app/';
+        var url = baseUrl + 's-task?project=' + projectname;
+
+        // Open the Todo List in a new tab or window
+        window.open(url, '_blank');
+    } else {
+        frappe.msgprint(__('Task does not have a name.'));
+    }
+}
 }
