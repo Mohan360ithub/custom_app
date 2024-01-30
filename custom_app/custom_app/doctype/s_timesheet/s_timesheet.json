@@ -19,7 +19,6 @@
   "column_break_3",
   "status",
   "parent_project",
-  "date",
   "employee_detail",
   "employee",
   "employee_name",
@@ -306,16 +305,20 @@
    "label": "Note"
   },
   {
-   "default": "Today",
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date"
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "S Timesheet",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "icon": "fa fa-clock-o",
  "is_submittable": 1,
  "links": [],
- "modified": "2024-01-30 15:28:06.810725",
+ "modified": "2024-01-29 17:58:39.924669",
  "modified_by": "Administrator",
  "module": "custom_app",
  "name": "S Timesheet",

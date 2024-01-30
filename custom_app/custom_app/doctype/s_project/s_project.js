@@ -210,4 +210,3 @@ function opentask(frm){
         frappe.msgprint(__('Task does not have a name.'));
     }
 }
-}
