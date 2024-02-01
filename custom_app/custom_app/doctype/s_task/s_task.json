@@ -59,7 +59,9 @@
   "closing_date",
   "column_break_22",
   "department",
-  "company"
+  "company",
+  "lft",
+  "rgt"
  ],
  "fields": [
   {
@@ -203,6 +205,7 @@
    "oldfieldtype": "Date"
   },
   {
+   "default": "1",
    "fieldname": "expected_time",
    "fieldtype": "Float",
    "label": "Expected Time (in hours)",
@@ -438,12 +441,24 @@
   {
    "fieldname": "column_break_ablg",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "lft"
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "rgt"
   }
  ],
  "icon": "fa fa-check",
  "links": [],
  "max_attachments": 5,
- "modified": "2024-02-01 10:12:36.546973",
+ "modified": "2024-02-01 15:03:44.299898",
  "modified_by": "Administrator",
  "module": "custom_app",
  "name": "S Task",
