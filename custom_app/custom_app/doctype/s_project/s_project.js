@@ -77,6 +77,10 @@ frappe.ui.form.on("S Project", {
 			frm.add_custom_button(__('Open Task'), () => {
 				opentask(frm);
 			}, __("Actions"));
+			
+			frm.add_custom_button(__('Open Timesheet'), () => {
+				frappe.set_route('List', 'S Timesheet');
+			}, __("Actions"));
 
 			// frm.trigger("set_project_status_button");
 

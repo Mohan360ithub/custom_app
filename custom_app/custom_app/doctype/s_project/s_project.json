@@ -11,9 +11,11 @@
  "field_order": [
   "section_break_qnqv",
   "task_count",
+  "pending_task",
+  "close_task",
   "task_counts",
-  "project_code",
   "project_name",
+  "project_code",
   "status",
   "customer",
   "project_type",
@@ -21,6 +23,7 @@
   "percent_complete_method",
   "percent_complete",
   "column_break_5",
+  "created_by",
   "project_template",
   "expected_start_date",
   "expected_end_date",
@@ -94,7 +97,7 @@
    "no_copy": 1,
    "oldfieldname": "status",
    "oldfieldtype": "Select",
-   "options": "Open\nCompleted\nCancelled",
+   "options": "Open\nHold\nCompleted\nCancelled",
    "search_index": 1
   },
   {
@@ -139,6 +142,7 @@
    "allow_in_quick_entry": 1,
    "fieldname": "project_template",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "From Template",
    "options": "Project Template",
    "set_only_once": 1
@@ -454,7 +458,8 @@
    "fieldname": "userss",
    "fieldtype": "Table MultiSelect",
    "label": "Users",
-   "options": "Multiselect User"
+   "options": "Multiselect User",
+   "reqd": 1
   },
   {
    "fieldname": "warranty_validity_period_tab",
@@ -493,6 +498,7 @@
   {
    "fieldname": "actual_effort_hours",
    "fieldtype": "Float",
+   "hidden": 1,
    "label": "Actual Effort Hours"
   },
   {
@@ -512,13 +518,31 @@
   {
    "fieldname": "column_break_paaj",
    "fieldtype": "Column Break"
+  },
+  {
+   "default": "__user",
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "Created By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pending_task",
+   "fieldtype": "HTML",
+   "label": "Open Task"
+  },
+  {
+   "fieldname": "close_task",
+   "fieldtype": "HTML",
+   "label": "Close Task"
   }
  ],
  "icon": "fa fa-puzzle-piece",
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 4,
- "modified": "2024-01-30 16:42:36.378315",
+ "modified": "2024-01-31 19:05:33.517824",
  "modified_by": "Administrator",
  "module": "custom_app",
  "name": "S Project",

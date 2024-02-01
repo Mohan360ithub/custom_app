@@ -58,7 +58,7 @@ def get_tasks_for_project(project_id):
     try:
         # Your code to fetch tasks for the project goes here
         # Example:
-        tasks = frappe.get_all("S Task", filters={"project": project_id}, fields=["name", "subject", "progress", "actual_time"])
+        tasks = frappe.get_all("S Task", filters={"project": project_id}, fields=["name", "subject", "progress", "actual_time", "expected_time","task_status","users"])
 
         total_actual_time = sum([float(task.get("actual_time") or 0) for task in tasks])
 
@@ -68,18 +68,80 @@ def get_tasks_for_project(project_id):
         frappe.throw("Error fetching tasks. Please try again.")
 
 @frappe.whitelist()
-def share_lead_with_user(project_name, user):
+def share_user_with_project(project_name, user):
     try:
-        # Remove share access for all other users
-        # remove_share_access_except_user(project_name, user)
+        # Check if the project document exists
+        project_exists = frappe.get_value('S Project', project_name, 'name')
+        if not project_exists:
+            frappe.throw("Project not found. Please check the project name.")
 
-        # Share the document with the specified user
+      
+        
+        # Share the project document with the specified user
         frappe.share.add('S Project', project_name, user, read=1, write=0)
+
+        # Share associated tasks with the specified user
+        tasks = frappe.get_all('S Task', filters={'project': project_name})
+        for task in tasks:
+            frappe.share.add('S Task', task.name, user, read=1, write=1)
 
         return {"user": user, "message": "Document shared successfully with {0}.".format(user)}
     except Exception as e:
         # frappe.log_error("Error sharing document with {0} for project {1}".format(user, project_name), title="Share Lead Error")
-        frappe.throw("Error sharing document. Please try again.")
+        frappe.throw("Error sharing document. Please try again. Error: {}".format(str(e)))
+
+
+# @frappe.whitelist()
+# def remove_user_with_project(project_name, user):
+#     existing_shares = frappe.get_all('DocShare', filters={'share_doctype': 'S Project', 'share_name': project_name, 'user': ('!=', user)}, fields=['name'])
+#     # print(existing_shares)
+#     for share in existing_shares:
+#         frappe.delete_doc('DocShare', share['name'])
+    
+
+@frappe.whitelist()
+def remove_user_with_project(project_name, user):
+    try:
+        # Remove share access for the project document
+        existing_shares_project = frappe.get_all('DocShare', filters={'share_doctype': 'S Project', 'share_name': project_name, 'user': ('!=', user)}, fields=['name'])
+        for share in existing_shares_project:
+            frappe.delete_doc('DocShare', share['name'])
+
+        # Remove share access for associated tasks
+        tasks = frappe.get_all('S Task', filters={'project': project_name})
+        for task in tasks:
+            existing_shares_task = frappe.get_all('DocShare', filters={'share_doctype': 'S Task', 'share_name': task.name, 'user': ('!=', user)}, fields=['name'])
+            for share in existing_shares_task:
+                frappe.delete_doc('DocShare', share['name'])
+
+        return {"user": user, "message": "Share access removed successfully for {0}.".format(user)}
+    except Exception as e:
+        # frappe.log_error("Error removing share access for {0} in project {1}".format(user, project_name), title="Remove Share Access Error")
+        frappe.throw("Error removing share access. Please try again. Error: {}".format(str(e)))
+
+
+
+
+@frappe.whitelist()
+def get_user_for_project(project_name):
+    # Get the 'S Project' document
+    project_doc = frappe.get_doc('S Project', project_name)
+
+    if project_doc:
+        # Access the table field 'userss'
+        userss = project_doc.get('userss', [])
+
+        # Extract user values from each row
+        user_list = [row.user for row in userss]
+
+        # Remove duplicate users, if any
+        unique_users = list(set(user_list))
+        print(unique_users)
+        return unique_users
+    else:
+        return None
+
+
 
 # def remove_share_access_except_user(project_name, user):
 #     # Fetch all shares for the specified document
@@ -125,3 +187,12 @@ def share_lead_with_user(project_name, user):
 #         frappe.throw("Error removing share access. Please try again.")
 
 
+import frappe
+
+@frappe.whitelist()
+def get_s_task_list():
+    # Your logic to fetch S Task records
+    # For example, fetching from a Frappe doctype named 'S Task'
+    s_task_list = frappe.get_all('S Task', filters={}, fields=['name', 'status'])
+
+    return s_task_list

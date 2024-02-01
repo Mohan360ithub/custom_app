@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:user",
+ "creation": "2024-02-01 10:33:06.975628",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_8on0",
+  "amended_from",
+  "user",
+  "column_break_brdm",
+  "date",
+  "yesterday_section",
+  "text_editor_nrij",
+  "column_break_anik",
+  "text_editor_zaak",
+  "column_break_oibq",
+  "text_editor_msox",
+  "tab_break_uqxe"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_8on0",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Morning Stand Up Meeting",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_brdm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "yesterday_section",
+   "fieldtype": "Section Break",
+   "label": "Discussion"
+  },
+  {
+   "fieldname": "text_editor_msox",
+   "fieldtype": "Text Editor",
+   "label": "Tomorrow"
+  },
+  {
+   "fieldname": "text_editor_nrij",
+   "fieldtype": "Text Editor",
+   "label": "Yesterday"
+  },
+  {
+   "fieldname": "text_editor_zaak",
+   "fieldtype": "Text Editor",
+   "label": "Today"
+  },
+  {
+   "fieldname": "column_break_anik",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_oibq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tab_break_uqxe",
+   "fieldtype": "Tab Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-02-01 10:42:55.238496",
+ "modified_by": "Administrator",
+ "module": "custom_app",
+ "name": "Stand Up Meeting Tracking",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

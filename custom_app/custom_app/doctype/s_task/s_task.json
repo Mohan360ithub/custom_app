@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_import": 1,
- "autoname": "format:{project}-{###}",
+ "autoname": "format:{subject}-{#}",
  "creation": "2024-01-29 12:09:37.008698",
  "default_view": "List",
  "doctype": "DocType",
@@ -17,6 +17,7 @@
   "is_template",
   "users",
   "column_break0",
+  "share_to_project_user",
   "status",
   "task_status",
   "priority",
@@ -25,6 +26,7 @@
   "completed_by",
   "completed_on",
   "hold_reason",
+  "attachment",
   "sb_timeline",
   "exp_start_date",
   "expected_time",
@@ -41,6 +43,10 @@
   "act_end_date",
   "sb_details",
   "description",
+  "solution_section",
+  "solution",
+  "column_break_ablg",
+  "script",
   "sb_depends_on",
   "depends_on",
   "depends_on_tasks",
@@ -53,11 +59,7 @@
   "closing_date",
   "column_break_22",
   "department",
-  "company",
-  "lft",
-  "rgt",
-  "old_parent",
-  "template_task"
+  "company"
  ],
  "fields": [
   {
@@ -187,7 +189,6 @@
    "mandatory_depends_on": "eval: doc.task_status == \"Completed\""
   },
   {
-   "collapsible": 1,
    "collapsible_depends_on": "eval:doc.__islocal",
    "fieldname": "sb_timeline",
    "fieldtype": "Section Break",
@@ -202,7 +203,6 @@
    "oldfieldtype": "Date"
   },
   {
-   "default": "1",
    "fieldname": "expected_time",
    "fieldtype": "Float",
    "label": "Expected Time (in hours)",
@@ -389,34 +389,6 @@
    "remember_last_selected_value": 1
   },
   {
-   "fieldname": "lft",
-   "fieldtype": "Int",
-   "hidden": 1,
-   "label": "lft",
-   "read_only": 1
-  },
-  {
-   "fieldname": "rgt",
-   "fieldtype": "Int",
-   "hidden": 1,
-   "label": "rgt",
-   "read_only": 1
-  },
-  {
-   "fieldname": "old_parent",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "ignore_user_permissions": 1,
-   "label": "Old Parent",
-   "read_only": 1
-  },
-  {
-   "fieldname": "template_task",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Template Task"
-  },
-  {
    "default": "Yes",
    "fieldname": "task_approved",
    "fieldtype": "Select",
@@ -436,18 +408,47 @@
    "fieldtype": "Small Text",
    "label": "Hold Reason",
    "mandatory_depends_on": "eval: doc.task_status == \"On Hold\""
+  },
+  {
+   "default": "1",
+   "fieldname": "share_to_project_user",
+   "fieldtype": "Check",
+   "label": "Share to Project User"
+  },
+  {
+   "fieldname": "script",
+   "fieldtype": "Code",
+   "label": "Script"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "solution_section",
+   "fieldtype": "Section Break",
+   "label": "Solution"
+  },
+  {
+   "fieldname": "solution",
+   "fieldtype": "Text Editor",
+   "label": "Solution"
+  },
+  {
+   "fieldname": "column_break_ablg",
+   "fieldtype": "Column Break"
   }
  ],
  "icon": "fa fa-check",
- "is_tree": 1,
  "links": [],
  "max_attachments": 5,
- "modified": "2024-01-30 12:25:56.410050",
+ "modified": "2024-02-01 10:12:36.546973",
  "modified_by": "Administrator",
  "module": "custom_app",
  "name": "S Task",
  "naming_rule": "Expression",
- "nsm_parent_field": "parent_task",
+ "nsm_parent_field": "project",
  "owner": "Administrator",
  "permissions": [
   {
@@ -462,14 +463,12 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "search_fields": "subject",
  "show_name_in_global_search": 1,
  "show_preview_popup": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "timeline_field": "project",
  "title_field": "subject",
  "track_seen": 1
 }

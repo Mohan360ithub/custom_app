@@ -178,7 +178,7 @@ class STask(NestedSet):
 		frappe.utils.nestedset.update_nsm(self)
 
 	def on_update(self):
-		self.update_nsm_model()
+		
 		self.check_recursion()
 		self.reschedule_dependent_tasks()
 		self.update_project()
@@ -288,7 +288,7 @@ class STask(NestedSet):
 		if check_if_child_exists(self.name):
 			throw(_("Child Task exists for this Task. You can not delete this Task."))
 
-		self.update_nsm_model()
+		# self.update_nsm_model()
 
 	def after_delete(self):
 		self.update_project()
