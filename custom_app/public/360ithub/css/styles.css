@@ -1,0 +1,1710 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* CSS Document */
+html {
+  font-size: 100%
+}
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary, title {
+  display: block
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 18px;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+fieldset, img {
+  border: 0
+}
+ol, ul {
+  list-style: none
+}
+sub, sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline
+}
+sup {
+  top: -0.5em
+}
+sub {
+  bottom: -0.25em
+}
+.form-control:focus {
+  box-shadow: inherit;
+}
+/*section{ overflow: hidden;}*/
+* {
+  outline: none !important;
+}
+a:active, a:focus, a:hover, input[type="image"], select:focus, input, input[type="button"]:focus, :focus {
+  outline: 0;
+  text-decoration: none;
+}
+a:hover {
+    color: #00AEEF;
+}
+.clearfix {
+  *zoom: 1
+}
+.clearfix:before, .clearfix:after {
+  display: block;
+  content: "";
+  line-height: 0
+}
+.clearfix:after {
+  clear: both
+}
+.clear {
+  clear: both
+}
+.btn {
+  outline: 0px;
+}
+.lists {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.mainpage {
+  position: relative;
+  overflow: hidden;
+}
+.container {
+  max-width: 1230px;
+}
+a, button {
+  transition: all 0.5s ease-in-out;
+}
+.m-hide {
+  display: block !important;
+}
+.d-hide {
+  display: none !important;
+}
+.br30 {
+  border-radius: 30px;
+}
+.mr15 {
+  margin-right: 15px;
+}
+/* Button */
+.btn-blue {
+  background: #00AEEF;
+  border: 0px;
+  border-radius: 25px;
+  padding: 12px 25px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.5s ease-in-out;
+}
+.btn-blue:hover {
+  background: #16192C;
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.btn-white {
+  background: #fff;
+  border: 0px;
+  border-radius: 25px;
+  padding: 12px 25px;
+  color: #00AEEF;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.5s ease-in-out;
+}
+.btn-white:hover {
+  background: #16192C;
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+/* Title */
+.maintitle {
+  margin-bottom: 45px;
+  width: 100%;
+  text-align: center;
+}
+.maintitle h2 {
+  color: #000;
+  font-size: 40px;
+  font-weight: 300;
+  position: relative;
+  display: inline-block;
+}
+.maintitle h2 span {
+  position: relative;
+  color: #00AEEF;
+  font-weight: 600;
+  z-index: 1;
+}
+/*.maintitle h2 span:before{ width: 125px; height: 15px; content: ''; position: absolute; z-index: -1; right: 5px; bottom: 4px; background: url(../images/uiline.svg) left top no-repeat; background-size:cover;}*/
+.slick-prev.slick-arrow {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: -20px;
+  top: 47%;
+  background: url("../images/prev-arrow.svg") left top no-repeat;
+  background-size: 100%;
+  color: transparent;
+  cursor: pointer;
+}
+.slick-next.slick-arrow {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: -20px;
+  top: 47%;
+  background: url("../images/next-arrow.svg") left top no-repeat;
+  background-size: 100%;
+  color: transparent;
+  cursor: pointer;
+}
+/*=========== HEADER CSS START ==========*/
+header {
+  width: 100%;
+  position: relative;
+  box-shadow: 0px 1px 4.4px 0px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: #fff;
+  height: 100px;
+}
+header .navbar {
+  padding: 0px;
+}
+header .navbar .navbar-brand {
+  padding: 0px;
+}
+
+.frappe-brand img {
+  width: 100px; /* Set the width of the image */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+header .navbar-expand-md .navbar-nav .nav-link {
+  padding: 20px 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+}
+header .nav-item:hover .nav-link, header .nav-item .nav-link.active {
+  color: #00AEEF;
+}
+header .nav-item:hover .dropdown-menu {
+  display: block;
+  transition: all 0.5s ease-in-out;
+}
+header .dropdown-menu {
+  margin: 0px;
+  border: 0px;
+  border-radius: 0px;
+  padding: 0px;
+  box-shadow: 0 26px 28px #00000012;
+}
+header .dropdown-menu .dropdown-item {
+  padding: 16px 20px 16px 50px;
+  color: #444;
+  border-bottom: 1px solid rgb(0 0 0 / 20%);
+  position: relative;
+  font-weight: 600;
+}
+header .dropdown-menu .dropdown-item:hover {
+  color: #00AEEF;
+}
+header .dropdown-menu .dropdown-item img {
+  position: absolute;
+  left: 15px;
+  top: 17px;
+  width: 16px;
+}
+header .dropdown-menu .dropdown-item.nobdr {
+  border: 0px;
+}
+header .dropdown-item.active, header .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #095672;
+}
+/*=========== HEROAREA CSS START ==========*/
+.heroarea {
+  /* background-image: url(../images/White\ background.svg); */
+  /* background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+  /* width: 100%;
+  height: 100vh;
+  width: 100%;
+  padding: 85px 0 25px;
+  margin-top: 58px;
+  overflow: hidden; */
+}
+
+.heroarea {
+  background-color: white;
+  padding: 85px 0 25px;
+  margin-top: 58px;
+  overflow: hidden;
+}
+
+.heroarea h1 {
+  color: #000000;
+  font-size: 44px;
+  font-weight: 300;
+  line-height: 60px;
+}
+.heroarea h1 span {
+  color: #00AEEF;
+  font-weight: 600;
+}
+span.lineview {
+  position: relative;
+  display: inline-block;
+  font-weight: 300 !important;
+  color: #fff !important;
+  z-index: 1;
+}
+.heroarea p {
+  color: #000000;
+  line-height: 32px;
+  font-size: 18px;
+  margin-bottom: 35px;
+}
+.heroarea a.btn-blue {
+  margin: 0 15px;
+  display: inline-block;
+  transition: all 0.5s;
+  position: relative;
+}
+.heroarea a:hover.btn-blue {
+  background: #fff;
+  color: #00AEEF;
+}
+.heroarea .slick-dots{ bottom: 0px;}
+
+
+/* ============Frappe Partner============= */
+
+.frappe-partner {
+  text-align: center;
+  padding: 60px;
+  padding-left: 150px;
+  padding-right: 150px;
+  background-color: #095672;
+}
+
+.partner-image {
+  max-width: 35%;
+  height: auto;
+}
+
+.partner-description {
+  color: #fff;
+  font-size: 18px;
+  margin-top: 10px;
+  line-height: 25px;
+  font-weight: 500;
+  padding-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .frappe-partner {
+    text-align: center;
+    padding: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  /* Adjust styles for smaller screens */
+  .partner-description {
+    font-size: 14px;
+    padding-bottom: 15px;
+  }
+
+  .partner-image {
+    max-width: 45%;
+    height: auto;
+  }
+}
+
+
+/*=========== CUSTOME SOFTWARE SOLUTION CSS START ==========*/
+.customsolution {
+  background: #E6EBEE;
+  width: 100%;
+  padding: 70px 0;
+  position: relative;
+}
+/* Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7))
+  }
+}
+#logos-home-page .slider {
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+#logos-home-page .slider:after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+#logos-home-page .slider:before {
+  left: 0;
+  top: 0;
+}
+#logos-home-page .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+#logos-home-page div.slide {
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/*=========== ALL SOLUTION CSS START ==========*/
+.allsloution {
+  width: 100%;
+  padding: 45px 0 0;
+}
+.type-solution {
+  font-size: 36px;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 70px;
+}
+.type-solution span {
+  color: #00AEEF;
+}
+.solutionBlue {
+  background: #095672 url("../images/bg.png") left top no-repeat;
+  background-size: cover;
+  ;
+  padding: 60px 0;
+  width: 100%;
+  overflow: hidden;
+}
+.solutionBlue h3 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 58px;
+  margin-bottom: 20px;
+}
+.solutionBlue h3 span {
+  font-weight: 600;
+  position: relative;
+  color: #00AEEF;
+  z-index: 1;
+  /* display: inline-block;*/
+}
+.solutionBlue p {
+  color: #fff;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+.solutionWhite {
+  background: #fff;
+  padding: 60px 0;
+  width: 100%;
+  overflow: hidden;
+}
+.solutionWhite h3 {
+  color: #000;
+  font-weight: 300;
+  font-size: 34.5px;
+  line-height: 58px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.solutionWhite h3 span {
+  font-weight: 600;
+  position: relative;
+  color: #00AEEF;
+  z-index: 1;
+  /*display: inline-block;*/
+}
+.solutionWhite p {
+  color: #000;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+.solutionWhite.bg-lightblue {
+  background: #E5F2FC;
+}
+/*=========== WHY DO BRANDS CSS START ==========*/
+.whydobrand {
+  width: 100%;
+  background: #E5F2FC;
+  padding: 60px 0 40px;
+  overflow: hidden;
+}
+.whydobrand h2 span:before {
+  width: 235px;
+  height: 28px;
+  z-index: -1;
+  right: 5px;
+  bottom: -1px
+}
+.whydobrand h3 {
+  color: #00AEEF;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.whydobrand h3 {
+  color: #00AEEF;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.whydobrand p {
+  color: #000;
+  line-height: 28px;
+}
+.brandcard {
+  position: relative;
+  padding-left: 105px;
+  width: 85%;
+  margin: 25px 0 40px;
+}
+.brandcard span.number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 70px;
+  font-weight: 600;
+  font-size: 70px;
+  color: transparent;
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: #00AEEF;
+}
+/*=========== SOFTWARE COMPANY CSS START ==========*/
+.softwarecompany {
+  width: 100%;
+  background: #0d2630;
+  padding: 60px 0;
+  overflow: hidden;
+}
+.softwarecompany h2 {
+  color: #fff;
+}
+.counter {
+  color: #fff;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 42px;
+}
+.counter img {
+  vertical-align: -1px;
+}
+.counter-title {
+  padding: 15px 0 0;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 145%;
+}
+/*=========== HOW WE WORK CSS START ==========*/
+.howwework {
+  width: 100%;
+  padding: 70px 0;
+  background: url(../images/insightbg.png) center top no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+.howwework h2 {
+  color: #fff;
+}
+/*=========== PEOPLE LOVE CSS START ==========*/
+.peoplelove {
+  width: 100%;
+  padding: 70px 0 90px;
+  overflow: hidden;
+  background-color: #E5F2FC;
+}
+.peoplelove p {
+  color: #000;
+  line-height: 28px;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+}
+.peoplelove p:before {
+  width: 40px;
+  height: 48px;
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: -20px;
+  top: -15px;
+  background: url(../images/quote-top.svg) left top no-repeat;
+  background-size: 100%;
+}
+.peoplelove p:after {
+  width: 40px;
+  height: 48px;
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: -14px;
+  bottom: -15px;
+  background: url(../images/quote-bot.svg) left top no-repeat;
+  background-size: 100%;
+}
+.testuser {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testuser h3 {
+  color: #00AEEF;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.testuser span {
+  display: block;
+  text-align: left;
+}
+.testuser img {
+  border-radius: 50%;
+  border: 2px solid #00AEEF;
+  width: 85px;
+  height: 85px;
+  margin-right: 25px;
+  vertical-align: middle;
+}
+.peoplelove .slick-slide {
+  padding: 25px 80px;
+}
+/*=========== INDUSTRIES WE RULE CSS START ==========*/
+.industrieswerule {
+  width: 100%;
+  background: #ffffff;
+  padding: 60px 0;
+  overflow: hidden;
+}
+.industrieswerule h2 {
+  color: #fff;
+}
+.cardRule {
+  width: 100%;
+  position: relative;
+}
+.cardRule ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cardRule li {
+  flex: calc(50% - 16px);
+  padding: 0;
+  margin: 8px;
+  border-radius: 15px;
+  height: 190px;
+  position: relative;
+}
+.cardRule li.fullwidth {
+  flex: 100%;
+  margin: 8px 0;
+}
+.cardRule li.heighcard {
+  height: 396px;
+}
+.cardRule li.hcard {
+  height: 293px;
+}
+.cardRule li a {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.90) 100%);
+  width: 100%;
+  height: 70%;
+  display: block;
+  border-radius: 15px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.cardRule li a span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 20px;
+  color: #fff;
+  display: block;
+  padding: 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+/*=========== BLOG CSS START ==========*/
+.bloghome {
+  background: #E6EBEE;
+  width: 100%;
+  padding: 70px 0 90px;
+}
+.blogcard {
+  border-radius: 15px;
+  padding: 7px 7px 0;
+}
+.blogcard h2 {
+  margin-bottom: 10px;
+}
+.blogcard h2 a {
+  color: #16192C;
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 600;
+}
+.blogcard h2 a:hover {
+  color: #00AEEF;
+}
+.blogcard p {
+  color: #425466;
+  line-height: 26px;
+  margin-bottom: 15px;
+}
+.blog-thumb {
+  margin-bottom: 15px;
+}
+.blog-thumb img {
+  border-radius: 15px;
+}
+.bloghome .slick-slide {
+  padding: 0 30px;
+}
+/*=========== FOOTER CSS START ==========*/
+footer {
+  background: #012531;
+  width: 100%;
+  padding: 60px 0 30px;
+}
+.socialfooter {
+  margin-top: 20px;
+}
+.socialfooter a {
+  display: inline-block;
+  margin-right: 20px;
+  color: #fff;
+  font-size: 18px;
+}
+footer h2 {
+  color: #00AEEF;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+footer p {
+  color: #fff;
+  line-height: 24px;
+  padding: 8px 0;
+}
+footer li a {
+  color: #fff;
+  display: inline-block;
+  padding: 8px 0;
+}
+footer li a:hover {
+  color: #00AEEF;
+}
+footer .foot-work {
+  line-height: 26px;
+  margin-bottom: 15px;
+  color: #fff;
+  padding-left: 30px;
+}
+footer .foot-work a {
+  color: #fff;
+}
+footer .foot-work span {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+footer .copyright {
+  padding: 35px 0 10px;
+  border-top: 1px solid rgb(217 219 233 / 45%);
+  font-size: 14px;
+  margin-top: 40px;
+  color: #fff;
+}
+footer .copyright a {
+  color: #fff;
+  font-weight: 600;
+}
+footer .copyright a:hover {
+  color: #00AEEF
+}
+.allright {
+  text-align: right;
+}
+/*=========== ABOUT US PAGE CSS START ==========*/
+.aboutwrap {
+  width: 100%;
+  padding: 60px 0 0;
+  margin-top: 58px;
+}
+.aboutwrap h1 {
+  color: #000;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 50px;
+}
+.aboutwrap h1 span {
+  color: #00AEEF;
+  font-weight: 600;
+  position: relative;
+}
+.aboutwrap p {
+  font-size: 18px;
+  line-height: 34px;
+  margin-top: 10px;
+}
+.branddigitally {
+  background: #095672;
+  padding: 60px 0;
+  text-align: center;
+}
+.branddigitally h2 {
+  color: #fff;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.branddigitally h2 span {
+  color: #00AEEF;
+  font-weight: 600;
+}
+.branddigitally p {
+  font-size: 18px;
+  line-height: 30px;
+  color: #fff;
+}
+.offerexpertise {
+  width: 100%;
+  padding: 60px 0 40px;
+  background: #E5F2FC;
+  overflow: hidden;
+  text-align: center;
+}
+.offerexpertise h3 {
+  font-weight: 600;
+  color: #000;
+  font-size: 22px;
+  line-height: 30px;
+  margin-top: 25px;
+}
+.cardOffer {
+  margin-bottom: 30px;
+}
+.Ourtechnologystack {
+  background: #095672;
+  padding: 60px 0;
+  text-align: center;
+}
+.Ourtechnologystack .maintitle {
+  margin-bottom: 20px;
+}
+.Ourtechnologystack h2 {
+  color: #fff;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.Ourtechnologystack h2 span {
+  color: #00AEEF;
+  font-weight: 600;
+}
+.Ourtechnologystack h2 span:before {
+  width: 110px;
+  background: url("../images/line-white.svg") left top no-repeat;
+  background-size: cover;
+}
+.Ourtechnologystack li {
+  display: inline-block;
+  margin: 8px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  width: 15%
+}
+.Ourtechnologystack li img {
+  width: auto;
+  height: 35px;
+}
+.InnovationTabs {
+  width: 100%;
+  padding: 60px 0;
+  background: #E5F2FC;
+  overflow: hidden;
+}
+.InnovationTabs .nav-item {
+  width: 100%;
+  margin: 15px 0;
+}
+.InnovationTabs .nav-link {
+  background: #fff;
+  border-radius: 10px;
+  padding: 19px 10px 10px;
+  width: 100%;
+  height: 130px;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+}
+.InnovationTabs .nav-link span {
+  margin: 0 auto;
+  display: block;
+  width: 52px;
+  margin-bottom: 15px;
+}
+.InnovationTabs .nav-link span.show {
+  display: none;
+}
+.InnovationTabs .nav-link.active {
+  background: #00AEEF;
+  color: #fff;
+}
+.InnovationTabs .nav-link.active span {
+  display: none;
+}
+.InnovationTabs .nav-link.active span.show {
+  display: block;
+}
+.InnovationTabs h3 {
+  font-size: 32px;
+  color: #00AEEF;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-left: 35px;
+}
+.InnovationTabs p {
+  color: #000;
+  font-size: 17px;
+  line-height: 32px;
+  margin-left: 35px;
+}
+.leadershipTeam {
+  width: 100%;
+  padding: 60px 0;
+  background: #095672;
+  overflow: hidden;
+}
+.leadershipTeam h2 {
+  color: #fff;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.leadershipTeam h3 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.leadershipTeam h3 span {
+  position: relative;
+  color: #00AEEF;
+  font-weight: 600;
+  z-index: 1;
+}
+.leadershipTeam p {
+  color: #fff;
+  font-size: 17px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.leadershipTeam p span {
+  font-weight: 600;
+  font-size: 20px;
+}
+.leadershipTeam img {
+  border-radius: 40px;
+}
+.cfoteam {
+  width: 100%;
+  padding: 60px 0;
+  background: #E5F2FC;
+  overflow: hidden;
+}
+.cfoteam h3 {
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.cfoteam h3 span {
+  position: relative;
+  color: #00AEEF;
+  font-weight: 600;
+  z-index: 1;
+}
+.cfoteam p {
+  color: #000;
+  font-size: 17px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.cfoteam p span {
+  font-weight: 600;
+  font-size: 20px;
+}
+.cfoteam img {
+  border-radius: 40px;
+}
+.OurExperts {
+  background: #00AEEF;
+  width: 100%;
+  padding: 60px 0;
+  overflow: hidden;
+}
+.OurExperts h2 span {
+  color: #fff;
+}
+.teammember {
+  width: 100%;
+  padding: 60px 0;
+  overflow: hidden;
+}
+.memberwrap {
+  margin-bottom: 20px;
+  width: 85%;
+  margin: 0 auto;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+.memberwrap:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+}
+.member-thumb {
+  margin-bottom: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.member-thumb img {
+  width: 100%;
+  height: auto;
+}
+.memberwrap h3 {
+  color: #000;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.memberwrap p {
+  color: #00AEEF;
+  font-size: 18px;
+  font-weight: 600;
+}
+.teamcard {
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.teamcard .team-thumb {
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.teamcard:hover .team-thumb {
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+}
+.teamcard .team-thumb img {
+  width: 100%;
+}
+.teamcard .teamindent {
+  padding: 25px 10px;
+}
+.teamcard h3 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.teamcard p {
+  color: #fff;
+  font-size: 17px;
+}
+.LifeIThub {
+  width: 100%;
+  padding: 30px 0;
+  background: #095672;
+  overflow: hidden;
+}
+.LifeIThub .slick-slide{
+	margin: 0 20px;
+}
+.LifeIThub .slick-slide img {
+    display: block;
+    border-radius: 10px;
+    margin: 30px 0;
+	width: 100%;
+}
+
+.LifeIThub li {
+  padding: 0;
+  margin: 8px;
+  float: left;
+  width: calc(25% - 16px);
+}
+.LifeIThub li img {
+  border-radius: 20px;
+  width: 100%;
+  margin: 8px 0;
+}
+.haveaQuestion {
+  width: 100%;
+  padding: 60px 0;
+  background: url(../images/questionbg.png) center top no-repeat;
+  background-size: cover;
+}
+.haveaQuestion h2 {
+  color: #fff;
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+.haveaQuestion h2 span {
+  display: block;
+  font-weight: 600;
+}
+.haveaQuestion .btn-white {
+  padding: 14px 60px;
+}
+/*=========== CONTACT US PAGE CSS START ==========*/
+.contactpage {
+  width: 100%;
+  padding: 60px 0;
+  background: #E5F2FC;
+  margin-top: 58px;
+}
+.contactpage p {
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 25px;
+}
+.contactpage li {
+  margin-bottom: 20px;
+  position: relative;
+  padding: 0 0 0 45px;
+}
+.contactpage li h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.contactpage li span {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.contactpage li .socialfooter a {
+  color: #00AEEF;
+  font-weight: 600;
+}
+.formbook {
+  width: 100%;
+  border-radius: 20px;
+  padding: 30px 30px 20px;
+  background: #fff;
+}
+.formbook h6 {
+  font-size: 20px;
+  color: #00aeef;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.formbook .form-control {
+  border: 0px;
+  border-radius: 0;
+  box-shadow: inherit;
+  border-bottom: 2px solid #00AEEF;
+  padding: 12px 0;
+  color: #00AEEF;
+  font-weight: 600;
+  font-size: 15px;
+}
+.formbook .form-control.message {
+  height: 100px;
+}
+.formbook .btn-blue {
+  vertical-align: middle;
+  font-size: 18px;
+}
+.formbook .btn-blue svg {
+  vertical-align: middle;
+  margin-right: 7px;
+}
+.customView {
+  margin-bottom: 20px;
+}
+.formbook .custom-choose input[type='radio'], .formbook .custom-choose input[type='checkbox'] {
+  display: none;
+}
+.formbook .custom-choose input[type='radio'] + label, .formbook .custom-choose input[type='radio']:not(checked) + label, .formbook .custom-choose input[type='checkbox'] + label, .formbook .custom-choose input[type='checkbox']:not(checked) + label {
+  padding: 12px 15px;
+  border: solid 1px #00AEEF;
+  border-radius: 55px;
+  text-align: center;
+  font-size: 15px;
+  margin-right: 10px;
+  transition: .4s;
+}
+.formbook .custom-choose input[type='radio']:checked + label, .formbook .custom-choose input[type='checkbox']:checked + label {
+  position: relative;
+  border: solid 2px #00AEEF;
+  background: #00AEEF;
+  color: #FFF;
+  transition: .4s;
+}
+/*=========== ERP PAGE CSS START ==========*/
+.innerhero {
+  width: 100%;
+  padding: 60px 0;
+  background: #E5F2FC;
+  margin-top: 58px;
+}
+.innerhero h1 {
+  color: #000;
+  font-weight: 300;
+  line-height: 55px;
+  margin-bottom: 20px;
+}
+.innerhero h1 span {
+  color: #00AEEF;
+  font-weight: 600;
+}
+.innerhero p {
+  font-size: 18px;
+  color: #000;
+  line-height: 32px;
+  margin-bottom: 20px;
+}
+.whychooseus {
+  width: 100%;
+  background: #00AEEF;
+  padding: 60px 0;
+}
+.whychooseus h2 span {
+  color: #fff;
+}
+.whychooseus li {
+  display: inline-block;
+  width: 19%;
+  vertical-align: top;
+  text-align: center;
+  padding: 0 15px;
+}
+.whychooseus li div {
+  width: 100%;
+  height: 170px;
+  padding: 25px 10px 10px;
+  background: #fff;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.whychooseus li div h3 {
+  font-size: 18px;
+  color: #000;
+  margin: 20px 0 0;
+  font-weight: 600;
+}
+.whychooseus li:hover div {
+  border-radius: 30px;
+  transition: all 0.5s ease-in-out;
+  background: rgb(255 255 255 / 90%);
+}
+.erpmodules {
+  width: 100%;
+  background: #095672;
+  padding: 60px 0;
+}
+.erpmodules h2 {
+  color: #fff;
+}
+.industrieswerule.erpcustom h2 {
+  color: #000;
+}
+.industrieswerule.erpcustom h2 span {
+  color: #00AEEF;
+}
+.faqwrap {
+  width: 100%;
+  padding: 60px 0;
+}
+.accordion .item {
+  margin-bottom: 10px;
+  background: none;
+  border: 1px solid #D3D3D3;
+  border-radius: 8px;
+}
+.faqwrap .accordion .item .item-header h2 button.btn.btn-link {
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2.5;
+  text-decoration: none;
+}
+.faqwrap .accordion .item .item-header {
+  border-bottom: none;
+  background: transparent;
+  padding: 0px;
+}
+.faqwrap .accordion .item .item-header h2 button {
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  display: block;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  font-weight: 600;
+}
+.faqwrap .accordion .item .item-header h2 i {
+  float: right;
+  font-size: 30px;
+  color: #eca300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 18px;
+}
+.faqwrap button.btn.btn-link.collapsed i {
+  transform: rotate(0deg);
+}
+.faqwrap button.btn.btn-link i {
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+.faqwrap .collapse {
+  border-top: 1px solid #ddd;
+}
+.faqwrap .faq-txt {
+  padding: 20px;
+  line-height: 26px;
+}
+.termsCondition {
+  width: 100%;
+  padding: 60px 0;
+}
+.termsCondition h1 {
+  font-size: 32px;
+  color: #000;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+.termsCondition h2 {
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.termsCondition h3 {
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.termsCondition p {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 20px;
+  line-height: 28px;
+}
+.solutionBlue h3 span.display-1, .solutionWhite h3 span.display-1 {
+  font-size: inherit;
+  display: inline-block;
+}
+/* =================Whatsapp link============= */
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 30px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+.my-float {
+  margin-top: 16px;
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(225, 225, 225, 0.2);
+  backdrop-filter: blur(90px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.popup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  max-width: 60vw;
+  text-align: center;
+}
+.popup h2 {
+  margin-top: 0;
+  background: linear-gradient(90deg, #00aeef, rgb(0, 46, 62));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.popup .close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  background: #00aeef;
+  color: #fff;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+}
+.popup .close svg {
+  width: 30px;
+  height: 30px;
+}
+.popup .close:hover {
+  background: #00afef54;
+}
+.popup form input, .popup form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  background: rgba(173, 216, 230, 0.336);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.popup form button {
+  background: #00aeef;
+  color: white;
+  border: none;
+  padding: 15px 50px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 0 10px;
+  width: min-content;
+}
+.popup .content {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  gap: 20px;
+}
+.popup .content .contact-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.popup .content .contact-form h2 {
+  text-align: left;
+}
+.popup .content .contact-form .input-group {
+  width: 100%;
+  margin: 0 auto;
+}
+.custom-contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5%;
+  padding: 10px;
+  align-items: center;
+  border-right: 2px solid rgba(0, 0, 0, 0.2);
+}
+.custom-contact-container .custom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  flex-direction: column;
+}
+.custom-contact-container .custom:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.custom-contact-container .custom p {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+}
+.custom-contact-container .custom svg {
+  width: 25px;
+  height: 25px;
+  color: #00aeef;
+}
+.icon-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding-left: 25px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  background: #00aeef;
+  color: #fff;
+}
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    font-size: 13px;
+}
+
+.contact-info p {
+  margin: 0 20px 0 0;
+  padding: 0;
+  color: #fff;
+}
+.phone, .email, .email-domain {
+  color: #fff;
+  display: inline-block;
+	font-size: 15px;
+	margin-right: 20px;
+	line-height: 26px;
+	padding: 3px 0;
+}
+a.phone, a.email, a.email-domain{
+  color: #fff;
+}
+a.phone i, a.email i, a.email-domain i{
+	margin-right: 5px;
+}
+
+.social-media-icons {
+  display: flex;
+}
+.icon-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding-left: 20px;
+}
+.icon-link i {
+  transition: color 0.3s ease;
+}
+.icon-link:hover i {
+  color: #000000;
+}
+
+.whatsappdesk{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 99;
+}
+.whatsappdesk a {
+    height: 55px;
+    width: 55px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    background: rgb(255,144,80);
+    background: linear-gradient(0deg, #00B100, #09db09);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    font-size: 24px;
+    line-height: 54px;
+}
+
+
+
+#main-div {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  z-index: 99;
+}
+
+#main-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 55px;
+  width: 55px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  background: rgb(255,144,80);
+    background: linear-gradient(180deg, rgba(255,144,80,1) 0%, rgba(255,71,27,1) 100%);
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+#main-button ~ button {
+  visibility: hidden;
+  font-weight: 600;
+  height: 50px;
+  padding: 0 20px;
+  color: #fff;
+  background: linear-gradient(90deg, #00a1f5, #0064f3);
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+  border: 0;
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: .2s all linear;
+  -webkit-transition: .2s all linear;
+  -moz-transition: .2s all linear;
+  -ms-transition: .2s all linear;
+  -o-transition: .2s all linear;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+#main-button.open ~ button {
+  visibility: visible;
+  right: 70px;
+  opacity: 1;
+  transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -webkit-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -moz-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -ms-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -o-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+}
+
+#main-button ~ a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 50px;
+  width: 50px;
+  font-size: 20px;
+  opacity: 0;
+  text-decoration: none;
+  color: #fff;
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: .2s all linear;
+  -webkit-transition: .2s all linear;
+  -moz-transition: .2s all linear;
+  -ms-transition: .2s all linear;
+  -o-transition: .2s all linear;
+}
+
+#main-button ~ .telegram-color {
+  background: linear-gradient(0deg, #017AB1, #01ABE6);
+}
+
+#main-button ~ .whatsapp-color {
+  background: linear-gradient(0deg, #00B100, #09db09);
+}
+
+#main-button ~ .messenger-color {
+  background: linear-gradient(0deg, #0078FF, #00C6FF);
+}
+
+#main-button.open ~ a {
+  opacity: 1;
+  transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -webkit-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -moz-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -ms-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -o-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+}
+#main-button.open ~ a:nth-of-type(1) {
+  bottom: 60px;
+}
+#main-button.open ~ a:nth-of-type(2) {
+  bottom: 120px;
+}
+#main-button.open ~ a:nth-of-type(3) {
+  bottom: 180px;
+}
+
+.wave {
+  animation-name: wave;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes wave {
+  0% {box-shadow: 0 0 0px 0px rgba(255, 255, 255, 0.5);}
+  100% {box-shadow: 0 0 0px 10px rgba(255, 255, 255, 0);}
+}
+
+.open {
+  animation-iteration-count: 1;
+}
+

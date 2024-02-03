@@ -1,0 +1,636 @@
+@media screen and (max-width:1169px) {
+  .heroarea h1 {
+    font-size: 45px;
+    line-height: 60px;
+  }
+  span.lineview:before {
+    width: 220px;
+  }
+  .dashboard {
+    width: 100%;
+    max-width: 900px;
+    top: -350px;
+  }
+  .heroarea {
+    padding: 55px 0;
+  }
+  .customsolution {
+    padding: 20px 0 50px;
+  }
+  .maintitle {
+    margin-bottom: 20px;
+  }
+  .maintitle h2 {
+    font-size: 32px;
+  }
+  .maintitle h2 br {
+    display: none;
+  }
+  .type-solution {
+    font-size: 28px;
+    line-height: 30px;
+    margin-bottom: 40px;
+  }
+  .solutionBlue, .solutionWhite {
+    padding: 30px 0;
+  }
+  .solutionBlue h3, .solutionWhite h3 {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .solutionWhite h3 span:before {
+    width: 125px;
+    height: 20px;
+    bottom: -3px;
+  }
+  .solutionBlue h3 span:before {
+    width: 125px;
+  }
+  .whydobrand {
+    padding: 40px 0 10px;
+  }
+  .softwarecompany {
+    padding: 40px 0;
+  }
+  .howwework {
+    padding: 40px 0;
+  }
+  .slick-next.slick-arrow {
+    right: 0;
+  }
+  .slick-prev.slick-arrow {
+    left: 0;
+  }
+}
+@media screen and (max-width:1023px) {
+.phone, .email, .email-domain {
+    font-size: 13px;
+    margin-right: 10px;
+    line-height: 16px;
+}
+header {
+    height: 90px;
+}
+.heroarea h1 {
+    font-size: 22px;
+    line-height: 30px;
+	margin-top: 15px;
+}	
+.heroarea p {
+    line-height: 24px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}	
+.heroarea .slick-dots {
+    bottom: -40px;
+}	
+.solutionBlue h3, .solutionWhite h3 {
+    font-size: 18px;
+    line-height: 30px;
+}	
+.solutionBlue p {
+    line-height: 25px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}	
+.whydobrand h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}	
+.whydobrand p {
+    line-height: 22px;
+    font-size: 14px;
+}	
+.counter-title {
+    font-size: 16px;
+    line-height: 125%;
+}	
+.maintitle h2 {
+    font-size: 26px;
+}	
+.peoplelove .slick-slide {
+    padding: 25px 20px;
+}	
+.peoplelove p {
+    line-height: 26px;
+    margin-bottom: 20px;
+    font-size: 13px;
+}	
+.cardRule li.heighcard {
+    height: 275px;
+}	
+.cardRule li {
+    border-radius: 10px;
+    height: 130px;
+}	
+.cardRule li a {
+    border-radius: 10px;
+}	
+.cardRule li.hcard {
+    height: 202px;
+}	
+.bloghome .slick-slide {
+    padding: 0 5px;
+}
+.blogcard h2 {
+    margin-bottom: 10px;
+    line-height: 18px;
+}	
+.blogcard h2 a {
+    font-size: 16px;
+    line-height: 22px;
+}	
+.blogcard p {
+    line-height: 25px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}	
+.aboutwrap h1 {
+    font-size: 26px;
+    line-height: 40px;
+}	
+.aboutwrap p {
+    font-size: 14px;
+    line-height: 24px;
+}	
+.cardOffer img{
+	width: 75%;
+}	
+.offerexpertise h3 {    
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 15px;
+}	
+.Ourtechnologystack li {
+    margin: 4px;
+    padding: 10px;
+    width: 23%;
+}	
+.InnovationTabs h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    margin-left: 0;
+}	
+.InnovationTabs p {
+    font-size: 15px;
+    line-height: 30px;
+    margin-left: 0;
+}	
+.InnovationTabs .nav-item {
+    margin: 5px 0;
+}	
+.leadershipTeam h3, .cfoteam h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}	
+.leadershipTeam p, .cfoteam p {
+    font-size: 13px;
+    line-height: 22px;
+    margin-bottom: 12px;
+}	
+.leadershipTeam p span, .cfoteam p span {
+    font-size: 16px;
+}
+.teamcard h3 {
+    font-size: 15px;
+}	
+.teamcard p {    
+    font-size: 13px;
+}	
+.teamcard .teamindent {
+    padding: 10px 6px;
+}	
+.LifeIThub .slick-slide {
+    margin: 0 10px;
+}	
+.LifeIThub .slick-slide img {
+    margin: 15px 0;
+}	
+	
+.formbook {   
+    border-radius: 10px;
+    padding: 15px;
+}	
+.formbook .custom-choose input[type='radio'] + label, .formbook .custom-choose input[type='radio']:not(checked) + label, .formbook .custom-choose input[type='checkbox'] + label, .formbook .custom-choose input[type='checkbox']:not(checked) + label {
+    padding: 8px 7px;
+    border-radius: 55px;
+    font-size: 10px;
+    margin-right: 3px;
+}	
+.customView {
+    margin-bottom: 5px;
+}	
+.formbook .form-control {
+    font-size: 13px;
+}	
+.whychooseus li {
+    padding: 0 3px;
+}	
+.whychooseus li div h3 {
+    font-size: 15px;
+    margin: 12px 0 0;
+}	
+.whychooseus li div {
+    height: 150px;
+}	
+.faqwrap .accordion .item .item-header h2 button {    
+    padding: 5px 10px;
+}
+.faqwrap .accordion .item .item-header h2 button.btn.btn-link {   
+    font-size: 15px;
+}	
+	
+	
+	
+}
+@media screen and (max-width:767px) {
+  .frappe-brand{
+    display: none;
+  }
+  .m-hide {
+    display: none !important;
+  }
+  .d-hide {
+    display: block !important;
+  }
+  .maintitle h2 {
+    font-size: 24px;
+  }
+  header {
+    height: 60px;
+  }
+  header .navbar {
+    padding: 9px 15px;
+  }
+  header .navbar-toggler-icon {
+    position: absolute;
+    right: 15px;
+    top: 17px;
+    background: url(../images/menu-b.svg) left top no-repeat;
+    width: 30px;
+    height: 28px;
+    background-size: 100%;
+  }
+  header .navbar-collapse {
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 58px;
+    position: absolute;
+    z-index: 99;
+    background: #fff;
+  }
+  header .navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+    background: #f3f3f3;
+  }
+  .heroarea {
+    padding: 35px 0 55px;
+  }
+  .heroarea h1 {
+    font-size: 25px;
+    line-height: 36px;
+    text-align: center;
+  }
+  .heroarea .slick-dots {
+    bottom: -40px;
+  }
+  span.lineview:before {
+    width: 95px;
+    bottom: -6px;
+  }
+  .solutionBlue h3 span:before {
+    width: 105px;
+  }
+  .heroarea p {
+    line-height: 24px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .heroarea a.btn-blue {
+    margin: 0 10px;
+  }
+  .dashboard {
+    width: 90%;
+    max-width: 900px;
+    top: -170px;
+  }
+  .customsolution {
+    padding: 30px 0 20px;
+  }
+  .allsloution {
+    padding: 25px 0 0;
+  }
+  .type-solution {
+    font-size: 22px;
+    line-height: 24px;
+    margin-bottom: 25px;
+  }
+  .solutionBlue h3, .solutionWhite h3 {
+    font-size: 24px;
+    line-height: 35px;
+    margin-top: 20px;
+  }
+  .solutionBlue .btn-blue, .solutionWhite .btn-blue {
+    width: 100%;
+    text-align: center;
+  }
+  .whydobrand h2 span:before {
+    width: 185px;
+    height: 26px;
+    right: 5px;
+    bottom: -9px;
+  }
+  .brandcard {
+    padding-left: 125px;
+    width: 100%;
+    margin: 15px 0 20px;
+  }
+  .whydobrand h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .whydobrand p {
+    line-height: 28px;
+    font-size: 13px;
+  }
+  .softwarecompany h2 span:before {
+    width: 215px;
+    bottom: -11px;
+  }
+  .counter {
+    font-size: 35px;
+    line-height: 35px;
+    margin-top: 35px;
+  }
+  .counter-title {
+    width: 100%;
+    font-size: 20px;
+    line-height: 138%;
+    margin-top: 18px;
+  }
+  .counter-title br {
+    display: none;
+  }
+  .peoplelove .slick-slide {
+    padding: 0 20px;
+  }
+  .peoplelove {
+    padding: 50px 0 70px;
+  }
+  .peoplelove p {
+    line-height: 24px;
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+  .testuser h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  .testuser img {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+  }
+  .blogcard h2 {
+    line-height: 22px;
+  }
+  .blogcard h2 a {
+    font-size: 17px;
+    line-height: 22px;
+  }
+  footer li {
+    width: 50%;
+    float: left;
+  }
+  footer h2 {
+    margin: 30px 0 10px;
+    font-size: 18px;
+  }
+  footer .copyright {
+    padding: 15px 0 0;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+  .allright {
+    text-align: center;
+    margin: 5px 0 0;
+    line-height: 24px;
+  }
+  /*=========== ABOUT US PAGE CSS START ==========*/
+  .aboutwrap {
+    padding: 24px 0 0;
+  }
+  .aboutwrap h1 {
+    font-size: 25px;
+    line-height: 34px;
+  }
+  .aboutwrap h1 span:before {
+    width: 109px;
+    height: 25px;
+    right: 0;
+    bottom: -4px;
+  }
+  .aboutwrap p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .branddigitally {
+    padding: 30px 0;
+  }
+  .branddigitally h2 {
+    font-size: 25px;
+  }
+  .branddigitally p {
+    font-size: 15px;
+    line-height: 27px;
+  }
+  .maintitle h2 span:before {
+    width: 141px;
+    height: 19px;
+    bottom: -6px;
+  }
+  .offerexpertise {
+    padding: 30px 0 10px;
+  }
+  .Ourtechnologystack {
+    padding: 40px 0;
+  }
+  .Ourtechnologystack li {
+    margin: 5px;
+    padding: 10px;
+    width: calc(32.33% - 10px);
+  }
+  .Ourtechnologystack li img {
+    height: 20px;
+  }
+  .InnovationTabs {
+    padding: 20px 0;
+  }
+  .InnovationTabs .nav-item {
+    width: 33%;
+    margin: 0;
+    float: left;
+    padding: 0 5px;
+  }
+  .InnovationTabs .nav-link {
+    padding: 14px 5px 6px;
+    height: 105px;
+    font-size: 12px;
+  }
+  .InnovationTabs .nav-link span img {
+    width: 40px;
+    height: auto;
+  }
+  .nav.vtab {
+    margin-bottom: 25px;
+  }
+  .InnovationTabs h3 {
+    font-size: 26px;
+    margin-bottom: 5px;
+    margin-left: 0;
+  }
+  .InnovationTabs p {
+    font-size: 15px;
+    line-height: 28px;
+    margin-left: 0;
+  }
+  .leadershipTeam img, .cfoteam img {
+    border-radius: 20px;
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 20px;
+  }
+  .leadershipTeam h3, .cfoteam h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  .leadershipTeam p, .cfoteam p {
+    font-size: 15px;
+    line-height: 26px;
+    margin-bottom: 15px;
+  }
+  .leadershipTeam, .cfoteam {
+    padding: 30px 0;
+  }
+  .memberwrap {
+    width: 100%;
+    margin: 0 auto 30px;
+  }
+  .teammember {
+    padding: 30px 0 20px;
+  }
+  .OurExperts {
+    padding: 30px 0;
+  }
+  .teamcard h3 {
+    font-size: 18px;
+  }
+  .teamcard p {
+    font-size: 13px;
+  }
+  .teamcard {
+    margin-bottom: 20px;
+  }
+  .LifeIThub li {
+    padding: 0;
+    margin: 5px;
+    float: left;
+    width: calc(50% - 10px);
+  }
+  .LifeIThub {
+    padding: 10px 0;
+  }
+  .LifeIThub li img {
+    border-radius: 10px;
+  }
+  .haveaQuestion {
+    padding: 30px 0;
+  }
+  .haveaQuestion h2 {
+    font-size: 26px;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+  .innerhero {
+    padding: 30px 0;
+  }
+  .innerhero h1 {
+    line-height: 40px;
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  .innerhero p {
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 20px;
+  }
+  .formbook {
+    padding: 20px;
+  }
+  .formbook .btn-blue {
+    width: 100%;
+  }
+  .whychooseus {
+    padding: 30px 0;
+  }
+  .whychooseus ul {
+    margin-top: 40px;
+  }
+  .whychooseus li {
+    width: 49%;
+    padding: 5px;
+  }
+  .erpmodules {
+    padding: 30px 0;
+  }
+  .faqwrap {
+    padding: 0 0 40px;
+  }
+  .faqwrap .btn {
+    white-space: inherit;
+  }
+  .faqwrap .accordion .item .item-header h2 button {
+    font-size: 14px;
+    padding: 10px 40px 10px 20px;
+  }
+  .faqwrap .accordion .item .item-header h2 button.btn.btn-link {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .contact-container {
+    display: none;
+  }
+  .container .text {
+    font-size: 30px;
+  }
+  .container form {
+    padding: 10px 0 0 0;
+  }
+  .container form .form-row {
+    display: block;
+  }
+  form .form-row .input-data {
+    margin: 35px 0 !important;
+  }
+  .submit-btn .input-data {
+    width: 40% !important;
+  }
+  .popup {
+    max-height: 80vh;
+    max-width: 90vw;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  .popup .content {
+    grid-template-columns: 1fr;
+  }
+footer {
+    padding: 10px 0 30px;
+}	
+	
+}
