@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class StandUpMeetingTracking(Document):
+class LeadFollowUp(Document):
 	pass

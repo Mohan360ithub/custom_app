@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestStandUpMeetingTracking(FrappeTestCase):
+class TestLeadFollowUp(FrappeTestCase):
 	pass
