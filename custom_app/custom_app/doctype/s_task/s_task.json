@@ -94,9 +94,8 @@
   {
    "fieldname": "issue",
    "fieldtype": "Link",
-   "hidden": 1,
    "label": "Issue",
-   "options": "Issue"
+   "options": "S Issue"
   },
   {
    "fieldname": "type",
@@ -467,7 +466,11 @@
  "icon": "fa fa-check",
  "links": [],
  "max_attachments": 5,
+<<<<<<< HEAD
  "modified": "2024-02-07 09:55:32.023751",
+=======
+ "modified": "2024-02-06 10:57:20.167108",
+>>>>>>> 6d208aa (from local 7/2/24)
  "modified_by": "Administrator",
  "module": "custom_app",
  "name": "S Task",

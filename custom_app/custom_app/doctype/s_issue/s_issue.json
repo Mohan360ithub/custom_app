@@ -7,7 +7,6 @@
  "default_view": "List",
  "doctype": "DocType",
  "document_type": "Setup",
- "email_append_to": 1,
  "engine": "InnoDB",
  "field_order": [
   "subject_section",
@@ -15,12 +14,12 @@
   "subject",
   "project",
   "customer",
-  "raised_by",
+  "user",
   "cb00",
   "status",
   "priority",
   "issue_type",
-  "issue_split_from",
+  "created_on_website",
   "sb_details",
   "description"
  ],
@@ -61,19 +60,6 @@
    "search_index": 1
   },
   {
-   "bold": 1,
-   "default": "__user",
-   "depends_on": "eval:doc.__islocal",
-   "fieldname": "raised_by",
-   "fieldtype": "Data",
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "label": "Raised By (Email)",
-   "oldfieldname": "raised_by",
-   "oldfieldtype": "Data",
-   "options": "Email"
-  },
-  {
    "fieldname": "cb00",
    "fieldtype": "Column Break"
   },
@@ -105,13 +91,6 @@
    "options": "Issue Type"
   },
   {
-   "fieldname": "issue_split_from",
-   "fieldtype": "Link",
-   "label": "Issue Split From",
-   "options": "Issue",
-   "read_only": 1
-  },
-  {
    "collapsible": 1,
    "collapsible_depends_on": "eval:doc.status!=\"Closed\"",
    "fieldname": "sb_details",
@@ -132,11 +111,25 @@
    "fieldtype": "Link",
    "label": "Project",
    "options": "S Project"
+  },
+  {
+   "fetch_from": "project.customer_mail_id",
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User"
+  },
+  {
+   "default": "0",
+   "fieldname": "created_on_website",
+   "fieldtype": "Check",
+   "label": "Created From Website",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-ticket",
  "links": [],
- "modified": "2024-02-02 18:49:55.955468",
+ "modified": "2024-02-06 11:08:32.511706",
  "modified_by": "Administrator",
  "module": "custom_app",
  "name": "S Issue",
@@ -156,7 +149,7 @@
   }
  ],
  "quick_entry": 1,
- "search_fields": "status,customer,subject,raised_by",
+ "search_fields": "status,customer,subject",
  "sender_field": "raised_by",
  "sort_field": "modified",
  "sort_order": "DESC",

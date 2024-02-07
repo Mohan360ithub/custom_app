@@ -196,3 +196,35 @@ def get_s_task_list():
     s_task_list = frappe.get_all('S Task', filters={}, fields=['name', 'status'])
 
     return s_task_list
+
+
+
+
+@frappe.whitelist()
+def task_with_issue_creation(i_id):
+    issue = frappe.get_last_doc("S Issue", filters={"name": i_id})
+
+    if not issue:
+        return f"Issue {i_id} not found"
+
+    issue_task = frappe.get_all("S Task", filters={"issue": i_id})
+
+    if issue_task:
+        return f"Task already created for Issue {i_id}"
+
+    task = frappe.get_doc({
+        "doctype": "S Task",
+        "subject": issue.subject,
+        "custom_customer_id": issue.customer,
+        "priority": issue.priority,
+        "issue": issue.name,
+        "project": issue.project,
+        "description": issue.description,
+        # "custom_task_type": issue.issue_type,
+    })
+
+    task.insert()
+
+    print(issue.subject)
+
+    return f"New Task created for Issue {i_id}"

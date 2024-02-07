@@ -17,7 +17,6 @@
   "project_name",
   "project_code",
   "status",
-  "customer",
   "project_type",
   "is_active",
   "percent_complete_method",
@@ -33,8 +32,10 @@
   "actual_effort_hours",
   "customer_details",
   "column_break_paaj",
+  "customer",
   "column_break_14",
   "sales_order",
+  "customer_mail_id",
   "users_section",
   "userss",
   "section_break_18",
@@ -184,7 +185,6 @@
    "collapsible": 1,
    "fieldname": "customer_details",
    "fieldtype": "Section Break",
-   "hidden": 1,
    "label": "Customer Details",
    "oldfieldtype": "Section Break",
    "options": "fa fa-user"
@@ -207,6 +207,7 @@
   {
    "fieldname": "sales_order",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Sales Order",
    "options": "Sales Order"
   },
@@ -536,13 +537,20 @@
    "fieldname": "close_task",
    "fieldtype": "HTML",
    "label": "Close Task"
+  },
+  {
+   "fetch_from": "customer.customer_mail_id",
+   "fieldname": "customer_mail_id",
+   "fieldtype": "Data",
+   "label": "Customer Mail ID",
+   "options": "Email"
   }
  ],
  "icon": "fa fa-puzzle-piece",
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 4,
- "modified": "2024-01-31 19:05:33.517824",
+ "modified": "2024-02-05 17:20:32.725447",
  "modified_by": "Administrator",
  "module": "custom_app",
  "name": "S Project",
