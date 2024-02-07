@@ -39,6 +39,5 @@ frappe.ready(function() {
         var projectName = projectNames[i].trim(); // Remove leading/trailing whitespaces
         projectDropdown.append('<option value="' + projectName + '">' + projectName + '</option>');
     }
-
     // You can bind events, manipulate the DOM, or perform other actions here
 });
