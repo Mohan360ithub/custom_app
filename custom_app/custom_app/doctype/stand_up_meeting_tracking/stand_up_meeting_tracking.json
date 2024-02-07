@@ -7,7 +7,6 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_8on0",
-  "amended_from",
   "user",
   "column_break_brdm",
   "date",
@@ -17,22 +16,13 @@
   "text_editor_zaak",
   "column_break_oibq",
   "text_editor_msox",
-  "tab_break_uqxe"
+  "tab_break_uqxe",
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "section_break_8on0",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Morning Stand Up Meeting",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   },
   {
    "fieldname": "user",
@@ -86,12 +76,22 @@
   {
    "fieldname": "tab_break_uqxe",
    "fieldtype": "Tab Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Stand Up Meeting Tracking",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-02-01 10:42:55.238496",
+ "modified": "2024-02-06 17:58:37.405901",
  "modified_by": "Administrator",
  "module": "custom_app",
  "name": "Stand Up Meeting Tracking",

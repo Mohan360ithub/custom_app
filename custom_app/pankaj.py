@@ -136,7 +136,7 @@ def get_user_for_project(project_name):
 
         # Remove duplicate users, if any
         unique_users = list(set(user_list))
-        print(unique_users)
+        
         return unique_users
     else:
         return None

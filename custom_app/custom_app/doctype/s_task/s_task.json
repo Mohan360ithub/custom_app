@@ -27,6 +27,7 @@
   "completed_on",
   "hold_reason",
   "attachment",
+  "created_by_user",
   "sb_timeline",
   "exp_start_date",
   "expected_time",
@@ -400,7 +401,7 @@
   {
    "fieldname": "users",
    "fieldtype": "Link",
-   "label": "Users",
+   "label": "Assigned to (Users)",
    "mandatory_depends_on": "eval: doc.task_status == \"Assigned\"",
    "options": "User"
   },
@@ -452,12 +453,24 @@
    "fieldtype": "Int",
    "hidden": 1,
    "label": "rgt"
+  },
+  {
+   "default": "__user",
+   "fieldname": "created_by_user",
+   "fieldtype": "Link",
+   "label": "Created By (user)",
+   "options": "User",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-check",
  "links": [],
  "max_attachments": 5,
+<<<<<<< HEAD
  "modified": "2024-02-06 10:57:20.167108",
+=======
+ "modified": "2024-02-07 09:55:32.023751",
+>>>>>>> origin/develop
  "modified_by": "Administrator",
  "module": "custom_app",
  "name": "S Task",
