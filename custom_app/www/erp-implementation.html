@@ -106,7 +106,8 @@
 			</div>
 			<div class="col-lg-6 col-md-6 col-12">
 				<div class="formbook clearfix">
-					<form class="" action="send.php" method="post" id="demoForm">
+					<!-- <form class="" action="send.php" method="post" id="demoForm"> -->
+						<form  id="demoForm">
 					<h6>I’m interested in...</h6>
 
 					<div class="customView clearfix">
@@ -155,6 +156,15 @@
 <path d="M23.9471 1.02871C24.0017 0.892413 24.015 0.743103 23.9855 0.599288C23.956 0.455474 23.885 0.32348 23.7812 0.21967C23.6774 0.11586 23.5454 0.0448002 23.4015 0.015299C23.2577 -0.0142021 23.1084 -0.000846891 22.9721 0.0537091L1.15162 8.78221H1.15012L0.472125 9.05221C0.34371 9.10343 0.231953 9.18915 0.149198 9.2999C0.0664433 9.41066 0.0159116 9.54213 0.00318483 9.67979C-0.00954198 9.81746 0.0160314 9.95597 0.0770801 10.08C0.138129 10.2041 0.232277 10.3088 0.349125 10.3827L0.964125 10.7727L0.965625 10.7757L8.45812 15.5427L13.2251 23.0352L13.2281 23.0382L13.6181 23.6532C13.6923 23.7696 13.7971 23.8633 13.921 23.924C14.045 23.9846 14.1833 24.0099 14.3207 23.997C14.4581 23.9842 14.5892 23.9336 14.6998 23.851C14.8103 23.7684 14.8959 23.6569 14.9471 23.5287L23.9471 1.02871ZM21.1976 3.86371L9.95662 15.1047L9.63412 14.5977C9.57503 14.5047 9.49616 14.4258 9.40312 14.3667L8.89612 14.0442L20.1371 2.80321L21.9041 2.09671L21.1991 3.86371H21.1976Z" fill="white"/>
 </svg>
 Send Message</button>
+					</div>
+					<div class="form-group">
+						<!-- <input type="submit" class="btn btn-primary" /> -->
+						<div id="successMessage" style="display: none" class="badge bg-success">
+							Message sent successfully!
+						</div>
+						<div id="errorMessage" style="display: none" class="badge bg-danger">
+							There is something wrong, please try again later
+						</div>
 					</div>
 				</form>
 				</div>
@@ -260,7 +270,7 @@ Send Message</button>
 				</div>
 			</div>
 			<!-- <form class="contact-form"> -->
-				<form class="contact-form" action="erp_book1.php" method="post" id="demoForm">
+				<form class="contact-form" id="demoForm">
 				<h2>Book a Demo1	</h2>
 				<div class="input-group">
 					<input type="text" id="firstName" name="firstName" placeholder="Enter Your Name" required>
@@ -272,6 +282,15 @@ Send Message</button>
 				<textarea id="message" rows="5" name="message" placeholder="Write your message"
 					required></textarea>
 				<button type="submit" name="send" id="sendBtn" class="submit-btn">SUBMIT</button>
+				<div class="form-group">
+					<!-- <input type="submit" class="btn btn-primary" /> -->
+					<div id="successMessage" style="display: none" class="badge bg-success">
+						Message sent successfully!
+					</div>
+					<div id="errorMessage" style="display: none" class="badge bg-danger">
+						There is something wrong, please try again later
+					</div>
+				</div>
 			</form>
 		</div>
 	</div>
@@ -656,7 +675,7 @@ Send Message</button>
 	});
 
 // reqcon
-document.getElementById("demoForm").addEventListener("submit", function (event) {
+/**document.getElementById("demoForm").addEventListener("submit", function (event) {
 
 event.preventDefault(); // Prevent the default form submission
 
@@ -697,7 +716,156 @@ fetch(this.action, {
 .catch(error => {
 	console.error('Error:', error);
 });
-});
+});**/
 </script>
+<script>
+    window.frappe = {};
+    frappe.ready_events = [];
+    frappe.ready = function(fn) {
+        frappe.ready_events.push(fn);
+    }
+    window.dev_server = {{ dev_server }};
+    window.socketio_port = {{ (frappe.socketio_port or 9000) }};
+    window.show_language_picker = {{ show_language_picker or 'false' }};
+</script>
+
+{% block base_scripts %}
+<!-- js should be loaded in body! -->
+<script>
+    frappe.boot = {{ boot }}
+    // for backward compatibility of some libs
+    frappe.sys_defaults = frappe.boot.sysdefaults;
+</script>
+{{ include_script('frappe-web.bundle.js') }}
+{% endblock %}
+ 
+{%- for link in web_include_js %}
+{{ include_script(link) }}
+{%- endfor -%}
+ 
+{%- block script %}
+    {% if colocated_js -%}
+        <script>{{ colocated_js }}</script>
+    {%- endif %}
+{%- endblock %}
+<!-- csrf_token -->
+{%- block body_include %}{{ body_include or "" }}{% endblock -%}
+<!-- PSCODE STARTS -->
+<!-- <script>
+	// Optionally, you can use JavaScript to enhance the form submission experience
+	document.getElementById("demoForm").addEventListener("submit", function (event) {
+
+		event.preventDefault(); // Prevent the default form submission
+
+		document.getElementById("sendBtn").disabled = true;
+
+		// Submit the form using AJAX
+		var formData = new FormData(this);
+
+		fetch(this.action, {
+			method: 'POST',
+			body: formData
+		})
+		.then(response => response.json())
+		.then(data => {
+		
+			if (data.success) {
+				// Show SweetAlert for success
+				Swal.fire({
+					icon: 'success',
+					title: 'Success!',
+					text: 'Sent Successfully',
+					timer: 3000, // 10 seconds
+					showConfirmButton: false
+				});
+
+				// Optionally, you can reset the form
+				this.reset();
+				document.getElementById('demoPopup').style.display = 'none';
+			} else {
+				// Show SweetAlert for failure
+				Swal.fire({
+					icon: 'error',
+					title: 'Error!',
+					text: 'Email sending failed: ' + data.error
+				});
+			}
+		})
+		.catch(error => {
+			console.error('Error:', error);
+		});
+	});
+</script> -->
+
+<script>
+	/* $(document).ready(function () {
+		 $("#contact-form").submit(function (event) {
+			 event.preventDefault();
+			 $("#successMessage").hide();
+			 $("#errorMessage").hide();
+			 $.ajax({
+				 type: "POST",
+				 url: "process_form.php",
+				 data: $("#contact-form").serialize(),
+				 success: function (response) {
+					 if (response === "success") {
+						 // Clear form fields
+						 $("#contact-form")[0].reset();
+						 // Hide error message
+						 $("#errorMessage").hide();
+						 // Show success message
+						 $("#successMessage").show();
+					 } else {
+						 // Hide success message
+						 $("#successMessage").hide();
+						 // Show error message
+						 $("#errorMessage").show();
+					 }
+				 },
+				 error: function () {
+					 $("#errorMessage").show();
+				 }
+			 });
+		 });
+	 }); */
+
+
+
+	 $(document).ready(function() {
+		 $("#demoForm").submit(function(event) {
+			 event.preventDefault(); // Prevent the default form submission behavior
+	 
+			 // Serialize the form data
+			 var formData = $(this).serialize();
+	 
+			 // Send the data to the server-side method using Frappe's AJAX API (frappe.call)
+			 frappe.call({
+				 method: "custom_app.custom_app.api.process_form_data",
+				 args: {
+					 form_data: formData
+				 },
+				 
+				 callback: function(response) {
+					 if (!response.exc) {
+						 // Hide error message
+						 $("#errorMessage").hide();
+						 // Show success message
+						 $("#successMessage").show();
+
+						 $("#demoForm")[0].reset();
+
+						 
+					 } else {
+						 alert("Error submitting form data: " + response.exc);
+					 }
+				 }
+			 });
+		 });
+	 });
+ </script>
+
+
+</body>
+</html>
 </body>
 </html>

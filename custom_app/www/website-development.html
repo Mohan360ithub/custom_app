@@ -133,18 +133,32 @@
 					<p>hello@360ithub.com</p>
 				</div>
 			</div>
-			<form class="contact-form" action="erp_book1.php" method="post" id="demoForm">
-				<h2>Book a Demo1	</h2>
+			<form class="contact-form" id="popdemoForm">
+				<h2>Book a Demo	</h2>
 				<div class="input-group">
-					<input type="text" id="firstName" name="firstName" placeholder="Enter Your Name" required>
+					<input type="text" name="name" placeholder="Enter Your Name" required>
 				</div>
 				<div class="input-group">
-					<input type="email" id="email" name="email" placeholder="Email Address" required>
-					<input type="text" id="phone" name="phone" placeholder="phone No.">
+					<input type="email" name="email" placeholder="Email Address" required>
+					<input type="text" name="phone" placeholder="phone No.">
 				</div>
-				<textarea id="message" rows="5" name="message" placeholder="Write your message"
+				<textarea rows="5" name="message" placeholder="Write your message"
 					required></textarea>
-				<button type="submit" name="send" id="sendBtn" class="submit-btn">SUBMIT</button>
+					<div class="form-group">
+						<button type="submit" name="send"  class="btn btn-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M23.9471 1.02871C24.0017 0.892413 24.015 0.743103 23.9855 0.599288C23.956 0.455474 23.885 0.32348 23.7812 0.21967C23.6774 0.11586 23.5454 0.0448002 23.4015 0.015299C23.2577 -0.0142021 23.1084 -0.000846891 22.9721 0.0537091L1.15162 8.78221H1.15012L0.472125 9.05221C0.34371 9.10343 0.231953 9.18915 0.149198 9.2999C0.0664433 9.41066 0.0159116 9.54213 0.00318483 9.67979C-0.00954198 9.81746 0.0160314 9.95597 0.0770801 10.08C0.138129 10.2041 0.232277 10.3088 0.349125 10.3827L0.964125 10.7727L0.965625 10.7757L8.45812 15.5427L13.2251 23.0352L13.2281 23.0382L13.6181 23.6532C13.6923 23.7696 13.7971 23.8633 13.921 23.924C14.045 23.9846 14.1833 24.0099 14.3207 23.997C14.4581 23.9842 14.5892 23.9336 14.6998 23.851C14.8103 23.7684 14.8959 23.6569 14.9471 23.5287L23.9471 1.02871ZM21.1976 3.86371L9.95662 15.1047L9.63412 14.5977C9.57503 14.5047 9.49616 14.4258 9.40312 14.3667L8.89612 14.0442L20.1371 2.80321L21.9041 2.09671L21.1991 3.86371H21.1976Z" fill="white"/>
+				</svg>
+				Send Message</button>
+					</div>
+				<div class="input-group">
+					<!-- <input type="submit" class="btn btn-primary" /> -->
+					<div id="successMessage1" style="display: none" class="badge bg-success">
+						Message sent successfully!
+					</div>
+					<div id="errorMessage1" style="display: none" class="badge bg-danger">
+						There is something wrong, please try again later
+					</div>
+				</div>
 			</form>
 		</div>
 	</div>
@@ -167,25 +181,28 @@
 			<div class="col-lg-6 col-md-6 col-12">
 				<div class="formbook clearfix">
 					<h6>I’m interested in...</h6>
+					
 					<div class="customView clearfix">
+						<form class=""  id="demoForm">
+							<input type="hidden" name="send">
 						  <div class="custom-choose">
-							 <input type="checkbox" id="opt-1" value="ERP Development">
+							 <input type="checkbox" id="opt-1" value="ERP Development" name="selected_options[]">
 							 <label for="opt-1">
 								 ERP Development
 							 </label>
-							 <input type="checkbox" id="opt-2" value="Mobile Application Development" name="Mobile Application Development">
+							 <input type="checkbox" id="opt-2" value="Mobile Application Development" name="selected_options[]">
 							 <label for="opt-2">
 								 Mobile Application Development
 							 </label>
-							 <input type="checkbox" id="opt-3" value="Custom Website Development">
+							 <input type="checkbox" id="opt-3" value="Custom Website Development" name="selected_options[]">
 							 <label for="opt-3">
 								 Custom Website Development
 							 </label>
-							  <input type="checkbox" id="opt-4" value="E-Commerce Solutions">
+							  <input type="checkbox" id="opt-4" value="E-Commerce Solutions" name="selected_options[]">
 							 <label for="opt-4">
 								 E-Commerce Solutions
 							 </label> 
-							 <input type="checkbox" id="opt-5" value="UI/UX Solutions">
+							 <input type="checkbox" id="opt-5" value="UI/UX Solutions" name="selected_options[]">
 							 <label for="opt-5">
 								 UI/UX Solutions
 							 </label>  
@@ -193,26 +210,37 @@
 					</div>
 					
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Your name|">
+						<input type="text" class="form-control" name="name" placeholder="Your name">
 					</div>
 					<div class="form-group">
-						<input type="email" class="form-control" placeholder="Email">
+						<input type="email" class="form-control" name="email" placeholder="Email">
 					</div>
 					<div class="form-group">
-						<input type="tel" class="form-control" placeholder="Phone">
+						<input type="tel" class="form-control" name="phone" placeholder="Phone">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Subject">
+						<input type="text" class="form-control" name="subject" placeholder="Subject">
 					</div>
 					<div class="form-group">
-						<textarea class="form-control message" placeholder="Message"></textarea>
+						<textarea class="form-control message" name="message" placeholder="Message"></textarea>
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M23.9471 1.02871C24.0017 0.892413 24.015 0.743103 23.9855 0.599288C23.956 0.455474 23.885 0.32348 23.7812 0.21967C23.6774 0.11586 23.5454 0.0448002 23.4015 0.015299C23.2577 -0.0142021 23.1084 -0.000846891 22.9721 0.0537091L1.15162 8.78221H1.15012L0.472125 9.05221C0.34371 9.10343 0.231953 9.18915 0.149198 9.2999C0.0664433 9.41066 0.0159116 9.54213 0.00318483 9.67979C-0.00954198 9.81746 0.0160314 9.95597 0.0770801 10.08C0.138129 10.2041 0.232277 10.3088 0.349125 10.3827L0.964125 10.7727L0.965625 10.7757L8.45812 15.5427L13.2251 23.0352L13.2281 23.0382L13.6181 23.6532C13.6923 23.7696 13.7971 23.8633 13.921 23.924C14.045 23.9846 14.1833 24.0099 14.3207 23.997C14.4581 23.9842 14.5892 23.9336 14.6998 23.851C14.8103 23.7684 14.8959 23.6569 14.9471 23.5287L23.9471 1.02871ZM21.1976 3.86371L9.95662 15.1047L9.63412 14.5977C9.57503 14.5047 9.49616 14.4258 9.40312 14.3667L8.89612 14.0442L20.1371 2.80321L21.9041 2.09671L21.1991 3.86371H21.1976Z" fill="white"/>
-</svg>
-Send Message</button>
+						<button type="submit" name="send" id="sendBtn" class="btn btn-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M23.9471 1.02871C24.0017 0.892413 24.015 0.743103 23.9855 0.599288C23.956 0.455474 23.885 0.32348 23.7812 0.21967C23.6774 0.11586 23.5454 0.0448002 23.4015 0.015299C23.2577 -0.0142021 23.1084 -0.000846891 22.9721 0.0537091L1.15162 8.78221H1.15012L0.472125 9.05221C0.34371 9.10343 0.231953 9.18915 0.149198 9.2999C0.0664433 9.41066 0.0159116 9.54213 0.00318483 9.67979C-0.00954198 9.81746 0.0160314 9.95597 0.0770801 10.08C0.138129 10.2041 0.232277 10.3088 0.349125 10.3827L0.964125 10.7727L0.965625 10.7757L8.45812 15.5427L13.2251 23.0352L13.2281 23.0382L13.6181 23.6532C13.6923 23.7696 13.7971 23.8633 13.921 23.924C14.045 23.9846 14.1833 24.0099 14.3207 23.997C14.4581 23.9842 14.5892 23.9336 14.6998 23.851C14.8103 23.7684 14.8959 23.6569 14.9471 23.5287L23.9471 1.02871ZM21.1976 3.86371L9.95662 15.1047L9.63412 14.5977C9.57503 14.5047 9.49616 14.4258 9.40312 14.3667L8.89612 14.0442L20.1371 2.80321L21.9041 2.09671L21.1991 3.86371H21.1976Z" fill="white"/>
+				</svg>
+				Send Message</button>
 					</div>
+					<div class="form-group">
+						<!-- <input type="submit" class="btn btn-primary" /> -->
+						<div id="successMessage" style="display: none" class="badge bg-success">
+							Message sent successfully!
+						</div>
+						<div id="errorMessage" style="display: none" class="badge bg-danger">
+							There is something wrong, please try again later
+						</div>
+					</div>
+				</div>
+			</form>																
 				</div>
 			</div>
 		</div>
@@ -472,5 +500,143 @@ Send Message</button>
 
 
 </script>
+<script>
+    window.frappe = {};
+    frappe.ready_events = [];
+    frappe.ready = function(fn) {
+        frappe.ready_events.push(fn);
+    }
+    window.dev_server = {{ dev_server }};
+    window.socketio_port = {{ (frappe.socketio_port or 9000) }};
+    window.show_language_picker = {{ show_language_picker or 'false' }};
+</script>
+
+{% block base_scripts %}
+<!-- js should be loaded in body! -->
+<script>
+    frappe.boot = {{ boot }}
+    // for backward compatibility of some libs
+    frappe.sys_defaults = frappe.boot.sysdefaults;
+</script>
+{{ include_script('frappe-web.bundle.js') }}
+{% endblock %}
+ 
+{%- for link in web_include_js %}
+{{ include_script(link) }}
+{%- endfor -%}
+ 
+{%- block script %}
+    {% if colocated_js -%}
+        <script>{{ colocated_js }}</script>
+    {%- endif %}
+{%- endblock %}
+<!-- csrf_token -->
+{%- block body_include %}{{ body_include or "" }}{% endblock -%}
+<!-- PSCODE STARTS -->
+
+ <script>
+	/* $(document).ready(function () {
+		 $("#contact-form").submit(function (event) {
+			 event.preventDefault();
+			 $("#successMessage").hide();
+			 $("#errorMessage").hide();
+			 $.ajax({
+				 type: "POST",
+				 url: "process_form.php",
+				 data: $("#contact-form").serialize(),
+				 success: function (response) {
+					 if (response === "success") {
+						 // Clear form fields
+						 $("#contact-form")[0].reset();
+						 // Hide error message
+						 $("#errorMessage").hide();
+						 // Show success message
+						 $("#successMessage").show();
+					 } else {
+						 // Hide success message
+						 $("#successMessage").hide();
+						 // Show error message
+						 $("#errorMessage").show();
+					 }
+				 },
+				 error: function () {
+					 $("#errorMessage").show();
+				 }
+			 });
+		 });
+	 }); */
+
+
+
+	 $(document).ready(function() {
+		 $("#demoForm").submit(function(event) {
+			 event.preventDefault(); // Prevent the default form submission behavior
+	 
+			 // Serialize the form data
+			 var formData = $(this).serialize();
+	 
+			 // Send the data to the server-side method using Frappe's AJAX API (frappe.call)
+			 frappe.call({
+				 method: "custom_app.custom_app.api.process_form_data",
+				 args: {
+					 form_data: formData
+				 },
+				 
+				 callback: function(response) {
+					 if (!response.exc) {
+						 // Hide error message
+						 $("#errorMessage").hide();
+						 // Show success message
+						 $("#successMessage").show();
+
+						 $("#demoForm")[0].reset();
+
+						 
+					 } else {
+						 alert("Error submitting form data: " + response.exc);
+					 }
+				 }
+			 });
+		 });
+	 });
+ </script>
+ <script>
+	$(document).ready(function() {
+		$("#popdemoForm").submit(function(event) {
+			event.preventDefault(); // Prevent the default form submission behavior
+	
+			// Serialize the form data
+			var formData = $(this).serialize();
+	
+			// Send the data to the server-side method using Frappe's AJAX API (frappe.call)
+			frappe.call({
+				method: "custom_app.custom_app.api.process_form_data",
+				args: {
+					form_data: formData
+				},
+				
+				callback: function(response) {
+					if (!response.exc) {
+						// Hide error message
+						$("#errorMessage1").hide();
+						// Show success message
+						$("#successMessage1").show();
+
+						$("#popdemoForm")[0].reset();
+						setTimeout(function() {
+							window.location.reload();
+						}, 2000); 
+
+						
+					} else {
+						alert("Error submitting form data: " + response.exc);
+					}
+				}
+			});
+		});
+	});
+ </script>
+
+
 </body>
 </html>
