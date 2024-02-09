@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>360 IT Hub</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="assets/custom_app/360ithub/images/favicon.png">
+    <link href="assets/custom_app/360ithub/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="assets/custom_app/360ithub/css/animate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link href="css/slick.css" rel="stylesheet" type="text/css" />
-    <link href="css/flaticon.css" rel="stylesheet" type="text/css" />
-    <link href="css/styles.css" rel="stylesheet" type="text/css" />
-    <link href="css/responsive.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/custom_app/360ithub/css/themify-icons.css">
+    <link href="assets/custom_app/360ithub/css/slick.css" rel="stylesheet" type="text/css" />
+    <link href="assets/custom_app/360ithub/css/flaticon.css" rel="stylesheet" type="text/css" />
+    <link href="assets/custom_app/360ithub/css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="assets/custom_app/360ithub/css/responsive.css" rel="stylesheet" type="text/css" />
     <style>
         .container-tak {
             max-width: 800px;
@@ -129,7 +129,7 @@
             <div class="container">
                 <!-- Brand -->
                 <a class="navbar-brand" href="index.html">
-                    <img src="images/logo.svg" alt="" /> </a>
+                    <img src="assets/custom_app/360ithub/images/logo.svg" alt="" /> </a>
                 </a>
 
                 <!-- Toggler/collapsibe Button -->
@@ -145,11 +145,11 @@
                                 About
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="about.html"><img src="images/Team-menu.svg" alt="" /> Our
+                                <a class="dropdown-item" href="about.html"><img src="assets/custom_app/360ithub/images/Team-menu.svg" alt="" /> Our
                                     Team</a>
-                                <a class="dropdown-item" href="partners.html"><img src="images/Partners-menu (2).svg"
+                                <a class="dropdown-item" href="partners.html"><img src="assets/custom_app/360ithub/images/Partners-menu (2).svg"
                                         alt="" /> Our Partners</a>
-                                <a class="dropdown-item" href="talent.html"><img src="images/talentfromus-menu.svg"
+                                <a class="dropdown-item" href="talent.html"><img src="assets/custom_app/360ithub/images/talentfromus-menu.svg"
                                         alt="" /> Hire a Talent From US</a>
                             </div>
                         </li>
@@ -158,15 +158,15 @@
                                 Services
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="erp-implementation.html"><img src="images/menu1.svg"
+                                <a class="dropdown-item" href="erp-implementation.html"><img src="assets/custom_app/360ithub/images/menu1.svg"
                                         alt="" /> ERP Implementation</a>
-                                <a class="dropdown-item" href="mobile-app-development.html"><img src="images/menu2.svg"
+                                <a class="dropdown-item" href="mobile-app-development.html"><img src="assets/custom_app/360ithub/images/menu2.svg"
                                         alt="" /> Mobile App Development</a>
-                                <a class="dropdown-item" href="website-development.html"><img src="images/menu3.svg"
+                                <a class="dropdown-item" href="website-development.html"><img src="assets/custom_app/360ithub/images/menu3.svg"
                                         alt="" /> Website Development</a>
-                                <a class="dropdown-item" href="E-commerce.html"><img src="images/menu4.svg" alt="" />
+                                <a class="dropdown-item" href="E-commerce.html"><img src="assets/custom_app/360ithub/images/menu4.svg" alt="" />
                                     E-Commerce Solutions</a>
-                                <a class="dropdown-item nobdr" href="ui-ux-solutions.html"><img src="images/menu5.svg"
+                                <a class="dropdown-item nobdr" href="ui-ux-solutions.html"><img src="assets/custom_app/360ithub/images/menu5.svg"
                                         alt="" /> UI/UX Solutions</a>
                             </div>
                         </li>
@@ -175,7 +175,7 @@
                     </ul>
                 </div>
                 <a class="frappe-brand" href="index.html">
-                    <img src="images/frappe.png" alt="" /> </a>
+                    <img src="assets/custom_app/360ithub/images/frappe.png" alt="" /> </a>
                 </a>
             </div>
         </nav>
@@ -183,12 +183,13 @@
 
     <div class="container-tak">
         <div class="form-header">
-            <h2>Apply For Front end developer</h2>
+            <h2>Apply For {{job_title}}</h2>
         </div>
-        <form class="application-form">
+        <form class="application-form" id="jobapply" enctype="multipart/form-data">
+            <input type="hidden" name="title" value="{{name}}" >
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name"  required>
             </div>
             <div class="form-group">
                 <label for="phone">Phone</label>
@@ -200,16 +201,31 @@
             </div>
             <div class="form-group">
                 <label for="resume">Choose Resume</label>
-                <input type="file" id="resume" name="resume" required>
+                <!-- <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" > -->
+                <input type="file" id="resume" name="resume" accept=".pdf">
+
             </div>
             <div class="form-group">
                 <label for="cover-letter">Cover Letter</label>
-                <textarea id="cover-letter" name="cover-letter"
+                <textarea id="cover-letter" name="cover_letter"
                     placeholder="Write down your biography here. Let the employers know who you are..."
                     required></textarea>
             </div>
-            <div class="buttons">
-                <button type="submit" class="apply-btn">Apply Now</button>
+            <div class="form-group">
+                <!-- <input type="submit" class="btn btn-primary" /> -->
+                <button type="submit" name="send" id="sendBtn" class="btn btn-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.9471 1.02871C24.0017 0.892413 24.015 0.743103 23.9855 0.599288C23.956 0.455474 23.885 0.32348 23.7812 0.21967C23.6774 0.11586 23.5454 0.0448002 23.4015 0.015299C23.2577 -0.0142021 23.1084 -0.000846891 22.9721 0.0537091L1.15162 8.78221H1.15012L0.472125 9.05221C0.34371 9.10343 0.231953 9.18915 0.149198 9.2999C0.0664433 9.41066 0.0159116 9.54213 0.00318483 9.67979C-0.00954198 9.81746 0.0160314 9.95597 0.0770801 10.08C0.138129 10.2041 0.232277 10.3088 0.349125 10.3827L0.964125 10.7727L0.965625 10.7757L8.45812 15.5427L13.2251 23.0352L13.2281 23.0382L13.6181 23.6532C13.6923 23.7696 13.7971 23.8633 13.921 23.924C14.045 23.9846 14.1833 24.0099 14.3207 23.997C14.4581 23.9842 14.5892 23.9336 14.6998 23.851C14.8103 23.7684 14.8959 23.6569 14.9471 23.5287L23.9471 1.02871ZM21.1976 3.86371L9.95662 15.1047L9.63412 14.5977C9.57503 14.5047 9.49616 14.4258 9.40312 14.3667L8.89612 14.0442L20.1371 2.80321L21.9041 2.09671L21.1991 3.86371H21.1976Z" fill="white"/>
+</svg>
+Send Message</button>
+            </div>
+            <div class="form-group">
+                <!-- <input type="submit" class="btn btn-primary" /> -->
+                <div id="successMessage" style="display: none" class="badge bg-success">
+                    Message sent successfully!
+                </div>
+                <div id="errorMessage" style="display: none" class="badge bg-danger">
+                    There is something wrong, please try again later
+                </div>
             </div>
         </form>
     </div>
@@ -233,7 +249,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
-                    <p><img src="images/logo.svg" alt="360 IT Hub Pvt" /></p>
+                    <p><img src="assets/custom_app/360ithub/images/logo.svg" alt="360 IT Hub Pvt" /></p>
                     <p>360 IT Hub Pvt. Ltd. delivers innovative IT solutions, from software development to web design
                         and digital marketing, ensuring tailored services for diverse business needs.</p>
                     <div class="socialfooter clearfix">
@@ -310,13 +326,174 @@
     </footer>
 
     <!-- JavaScript	-->
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/slick.js"></script>
+    <script type="text/javascript" src="assets/custom_app/360ithub/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="assets/custom_app/360ithub/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/custom_app/360ithub/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/custom_app/360ithub/js/slick.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="text/javascript" src="js/wow.min.js"></script>
-    <script type="text/javascript" src="js/custom.js"></script>
+    <script type="text/javascript" src="assets/custom_app/360ithub/js/wow.min.js"></script>
+    <script type="text/javascript" src="assets/custom_app/360ithub/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+
+    <script>
+        window.frappe = {};
+        frappe.ready_events = [];
+        frappe.ready = function(fn) {
+            frappe.ready_events.push(fn);
+        }
+        window.dev_server = {{ dev_server }};
+        window.socketio_port = {{ (frappe.socketio_port or 9000) }};
+        window.show_language_picker = {{ show_language_picker or 'false' }};
+    </script>
+    
+    {% block base_scripts %}
+    <!-- js should be loaded in body! -->
+    <script>
+        frappe.boot = {{ boot }}
+        // for backward compatibility of some libs
+        frappe.sys_defaults = frappe.boot.sysdefaults;
+    </script>
+    {{ include_script('frappe-web.bundle.js') }}
+    {% endblock %}
+     
+    {%- for link in web_include_js %}
+    {{ include_script(link) }}
+    {%- endfor -%}
+     
+    {%- block script %}
+        {% if colocated_js -%}
+            <script>{{ colocated_js }}</script>
+        {%- endif %}
+    {%- endblock %}
+    <!-- csrf_token -->
+    {%- block body_include %}{{ body_include or "" }}{% endblock -%}
+    <!-- PSCODE STARTS -->
+    <!-- <script>
+        // Optionally, you can use JavaScript to enhance the form submission experience
+        document.getElementById("jobapply").addEventListener("submit", function (event) {
+    
+            event.preventDefault(); // Prevent the default form submission
+    
+            document.getElementById("sendBtn").disabled = true;
+    
+            // Submit the form using AJAX
+            var formData = new FormData(this);
+    
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+            
+                if (data.success) {
+                    // Show SweetAlert for success
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: 'Sent Successfully',
+                        timer: 3000, // 10 seconds
+                        showConfirmButton: false
+                    });
+    
+                    // Optionally, you can reset the form
+                    this.reset();
+                    document.getElementById('demoPopup').style.display = 'none';
+                } else {
+                    // Show SweetAlert for failure
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error!',
+                        text: 'Email sending failed: ' + data.error
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script> -->
+    
+    <script>
+        /* $(document).ready(function () {
+             $("#contact-form").submit(function (event) {
+                 event.preventDefault();
+                 $("#successMessage").hide();
+                 $("#errorMessage").hide();
+                 $.ajax({
+                     type: "POST",
+                     url: "process_form.php",
+                     data: $("#contact-form").serialize(),
+                     success: function (response) {
+                         if (response === "success") {
+                             // Clear form fields
+                             $("#contact-form")[0].reset();
+                             // Hide error message
+                             $("#errorMessage").hide();
+                             // Show success message
+                             $("#successMessage").show();
+                         } else {
+                             // Hide success message
+                             $("#successMessage").hide();
+                             // Show error message
+                             $("#errorMessage").show();
+                         }
+                     },
+                     error: function () {
+                         $("#errorMessage").show();
+                     }
+                 });
+             });
+         }); */
+    
+    
+    
+         $(document).ready(function() {
+            $("#jobapply").submit(function(event) {
+                event.preventDefault(); // Prevent the default form submission behavior
+        
+                // Serialize the form data
+                var formData = $(this).serialize();
+        
+                // Send the data to the server-side method using Frappe's REST API
+                frappe.call({
+                    method: "custom_app.custom_app.api.jobapply",
+                    args: {
+                        form_data: formData
+                    },
+                    type: "POST",
+                    contentType: "application/x-www-form-urlencoded", // Set the content type
+                    callback: function(response) {
+                        if (!response.exc) {
+                            // Hide error message
+                            $("#errorMessage").hide();
+        
+                            // Show success message using SweetAlert
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: 'Your application has been submitted successfully!',
+                            }).then((result) => {
+                                // Redirect to the home page after user clicks 'OK' in SweetAlert
+                                if (result.isConfirmed) {
+                                    window.location.href = "/"; // Replace "/" with the actual URL of your home page
+                                }
+                            });
+        
+                            // Reset the form
+                            $("#jobapply")[0].reset();
+                        } else {
+                            alert("Error submitting form data: " + response.exc);
+                        }
+                    }
+                });
+            });
+        });
+        
+        
+     </script>
 </body>
 
 </html>

@@ -159,15 +159,13 @@
                           <!-- job single End -->
                        
                         <div class="job-post-details">
-                            <div class="post-details1 mb-50">
-                                <!-- Small Section Tittle -->
-                                <div class="small-section-tittle">
+                            <!-- <div class="post-details1 mb-50"> -->
+                                <!-- <div class="small-section-tittle">
                                     <h4>Job Description</h4>
-                                </div>
-                                <p>Craft intuitive user interfaces, ensuring seamless navigation and optimal user experience. Collaborate with design and backend teams to implement responsive and visually appealing web applications. Proficient in HTML, CSS, and JavaScript frameworks.</p>
-                            </div>
+                                </div> -->
+                                <p>{{description}}</p>
+                            <!-- </div> -->
                             <!-- <div class="post-details2  mb-50">
-                                 <!-- Small Section Tittle -->
                                 <div class="small-section-tittle">
                                     <h4>Required Knowledge, Skills, and Abilities</h4>
                                 </div>
@@ -179,8 +177,7 @@
                                    <li>Problem-solving skills and attention to detail.</li>
                                </ul>
                             </div> -->
-                            <div class="post-details2  mb-50">
-                                 <!-- Small Section Tittle -->
+                            <!-- <div class="post-details2  mb-50">
                                 <div class="small-section-tittle">
                                     <h4>Education + Experience</h4>
                                 </div>
@@ -191,7 +188,7 @@
                                    <li>Experience with popular frontend frameworks (e.g., React, Angular).</li>
                                    <li>Collaborative work in cross-functional development teams.</li>
                                </ul>
-                            </div>
+                            </div> -->
                         </div>
 
                     </div>
@@ -203,14 +200,14 @@
                                <h4>Job Overview</h4>
                            </div>
                           <ul>
-                              <li>Posted date : <span>08 Feb 2024</span></li>
-                              <li>Location : <span>Bangalore</span></li>
-                              <li>Vacancy : <span>02</span></li>
-                              <li>Job nature : <span>Full time</span></li>
-                              <li>Application date : <span>12 Mar 2024</span></li>
+                              <li>Posted date : <span>{{posting_date}}</span></li>
+                              <li>Location : <span>{{location}}</span></li>
+                              <li>Vacancy : <span>{{vacancy}}</span></li>
+                              <li>Job nature : <span>{{job_type}}</span></li>
+                              <li>Last date : <span>{{closes_on}}</span></li>
                           </ul>
                          <div class="apply-btn2">
-                            <a href="job-apply.html" class="btn">Apply Now</a>
+                            <a href="job_apply.html?id={{ name }}" class="btn">Apply Now</a>
                          </div>
                        </div>
                         <div class="post-details4  mb-50">
