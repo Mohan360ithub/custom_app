@@ -115,7 +115,7 @@ def process_form_data(form_data):
 #         custom_data_doc.insert()
 
 #         # Get the saved document
-#         # job_applicant = frappe.get_doc("Job Applicant", job_applicant.name)
+#         # ticket = frappe.get_doc("Job Applicant", ticket.name)
 
         
 #         # Check if resume file is attached in the form data
@@ -134,48 +134,108 @@ def process_form_data(form_data):
 
 
 
+
 import frappe
-import urllib.parse
 from frappe.utils.file_manager import save_file
 
 @frappe.whitelist(allow_guest=True)
-def jobapply(form_data):
+def jobapply(form_data=None, **kwargs):
     try:
-        # Parse form data
+        # Parse the form_data
         parsed_data = urllib.parse.parse_qs(form_data)
 
+        # Retrieve values more safely using get method with default value
         title = parsed_data.get("title", [None])[0]
         name = parsed_data.get("name", [None])[0]
         email = parsed_data.get("email", [None])[0]
         phone_no = parsed_data.get("phone", [None])[0]
         cover_letter = parsed_data.get("cover_letter", [None])[0]
+        resume_link = parsed_data.get("resume_url", [None])[0]
 
-        # Create a new Job Applicant document
+        # Check for required fields
+        if name is None:
+            return "Error: Applicant Name is required."
+
+        # Check for required fields
+        if email is None:
+            return "Error: Email Address is required."
+        # Your existing code for creating Job Applicant document
         job_applicant = frappe.new_doc("Job Applicant")
         job_applicant.job_title = title
         job_applicant.applicant_name = name
         job_applicant.email_id = email
         job_applicant.phone_number = phone_no
         job_applicant.cover_letter = cover_letter
-
-        # Save the document to persist the changes
+        job_applicant.resume_link = resume_link
         job_applicant.insert()
 
-        # Check if resume file is attached in the form data
+
+        # if 'file' not in frappe.request.files:
+        #     return frappe.throw("No file attached to the request")
+
+        # uploaded_file = frappe.request.files['file']
+        
+        # # Save the file using Frappe's save_file function
+        # file_doc = save_file(uploaded_file.name, uploaded_file.content)
         if "resume" in frappe.request.files:
             uploaded_file = frappe.request.files.get("resume")
 
-            # Save the uploaded file
-            file_doc = save_file(uploaded_file.name, uploaded_file.content, job_applicant.doctype, job_applicant.name)
+            # Save the file
+            file_doc = save_file(
+                file_name=uploaded_file.name,
+                content=uploaded_file.content,
+                is_private=0,  # Set to 1 if the file should be private
+                folder=job_applicant.get("folder"),  # Set the target folder
+            )
 
-            # Update the resume_attachment field with the file URL
+            # Attach the file to the job applicant document
             job_applicant.resume_attachment = file_doc.file_url
             job_applicant.save()
 
             return "Data inserted successfully with file upload."
-        else:
-            return "Data inserted successfully without file upload."
+
+        return "Data inserted successfully without file upload."
 
     except Exception as e:
-        frappe.log_error(str(e))
-        return "Error inserting data: " + str(e)
+        frappe.log_error("Error inserting data: " + str(e))
+        return "Error inserting data. Please try again. Error: " + str(e)
+
+
+
+
+import frappe
+from frappe.utils.file_manager import save_file
+
+@frappe.whitelist(allow_guest=True)
+def support_ticket(form_data=None, **kwargs):
+    try:
+        # Parse the form_data
+        parsed_data = urllib.parse.parse_qs(form_data)
+
+        # Retrieve values more safely using get method with default value
+        email = parsed_data.get("email", [None])[0]
+        customername = parsed_data.get("customername", [None])[0]
+        project = parsed_data.get("project", [None])[0]
+        subject = parsed_data.get("subject", [None])[0]
+        description = parsed_data.get("description", [None])[0]
+
+        # Check for required fields
+        if customername is None:
+            return "Error: customername Address is required."
+
+        # Your existing code for creating S Issue document
+        s_issue = frappe.new_doc("S Issue")
+        s_issue.subject = subject
+        s_issue.project = project
+        s_issue.customer = customername
+        s_issue.user = email
+        s_issue.description = description
+        s_issue.created_on_website = 1
+        s_issue.insert()
+
+        # Return only the ID of the created S Issue document
+        return s_issue.name
+
+    except Exception as e:
+        frappe.log_error("Error inserting data: " + str(e))
+        return "Error inserting data. Please try again. Error: " + str(e)
