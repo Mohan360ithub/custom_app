@@ -30,6 +30,7 @@
   "department",
   "planned_effort_hours",
   "actual_effort_hours",
+  "test",
   "customer_details",
   "column_break_paaj",
   "customer",
@@ -544,13 +545,18 @@
    "fieldtype": "Data",
    "label": "Customer Mail ID",
    "options": "Email"
+  },
+  {
+   "fieldname": "test",
+   "fieldtype": "Data",
+   "label": "test"
   }
  ],
  "icon": "fa fa-puzzle-piece",
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 4,
- "modified": "2024-02-12 17:58:36.103750",
+ "modified": "2024-02-13 11:34:53.766522",
  "modified_by": "Administrator",
  "module": "custom_app",
  "name": "S Project",
