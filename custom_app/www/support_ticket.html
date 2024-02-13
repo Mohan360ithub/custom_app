@@ -27,13 +27,14 @@
         }
 
         .form-header h2 {
-            font-size: 24px;
-            color: #333;
+            font-size: 36px;
+            color: #00aeef;
             text-align: left;
             margin-bottom: 20px;
-            border-bottom: 2px solid #e7e7e7;
+            
             padding-bottom: 10px;
         }
+        /**border-bottom: 2px solid #e7e7e7;**/
 
         .application-form {
             display: flex;
@@ -98,11 +99,28 @@
         .apply-btn:active,
         .cancel-btn:active {
             transform: translateY(1px);
+
+            .checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
         }
     </style>
 </head>
 
 <body>
+    <!-- Session User: {{ frappe.session.user }} -->
+    {% if show_page %}
+    {% else %}
+    <!-- If no logged-in user, redirect to the login page -->
+    <!-- <script>
+        window.location.href = "/login?redirect-to=support_ticket.html";
+    </script> -->
     <!-- ============ HEADER SECTION START ========== -->
     <header>
         <!-- black strip  -->
@@ -170,7 +188,7 @@
                                         alt="" /> UI/UX Solutions</a>
                             </div>
                         </li>
-                        <!-- <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li> -->
+                        <li class="nav-item"><a class="nav-link active" href="job_listing.html">Careers</a></li>
                         <li class="nav-item"><a class="nav-link" href="contacts.html">Contact</a></li>
                     </ul>
                 </div>
@@ -182,55 +200,51 @@
     </header>
 
     <div class="container-tak">
-        <div class="form-header">
-            <h2>Apply For {{job_title}}</h2>
+        <div class="form-header" style="display: flex;">
+            <h2 style="margin-right: 420px;">Support Ticket</h2>
+            <a href="/support_ticket_list" class="btn btn-primary" type="button" style="height: 35px;">Back</a>
+
         </div>
-        <form class="application-form" id="jobapply" enctype="multipart/form-data">
-            <input type="hidden" name="title" value="{{name}}" >
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name"  required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
+        <!-- <form class="application-form"> -->
+        <form id="support_ticket">
+
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" value="{{ common_customer_mail_id }}" readonly required>
             </div>
             <div class="form-group">
-                <label for="resume">Choose Resume</label>
-                <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" >
-                
+                <label for="customername">Customer Name</label>
+                <input type="text" id="customername" name="customername" value="{{ common_customer }}" readonly required>
             </div>
             <div class="form-group">
-                <label for="resume_url">Resume Url</label>
-                <input type="text" id="resume_url" name="resume_url" >
-                
+                <label for="project">Select Project</label>
+                <select id="project" name="project" required>
+                    {% for project in projects %}
+                        <option value="{{ project.value }}" {% if project_name == project.value %}selected{% endif %}>
+                            {{ project.label }}
+                        </option>
+                    {% endfor %}
+                </select>
             </div>
             <div class="form-group">
-                <label for="cover-letter">Cover Letter</label>
-                <textarea id="cover-letter" name="cover_letter"
-                    placeholder="Write down your biography here. Let the employers know who you are..."
+                <label for="subject">Subject</label>
+                <input type="text" name="subject" id="subject" placeholder="Subject">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description"
+                    placeholder="description"
                     required></textarea>
             </div>
-            <div class="form-group">
-                <!-- <input type="submit" class="btn btn-primary" /> -->
-                <button type="submit" name="send" id="sendBtn" class="btn btn-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M23.9471 1.02871C24.0017 0.892413 24.015 0.743103 23.9855 0.599288C23.956 0.455474 23.885 0.32348 23.7812 0.21967C23.6774 0.11586 23.5454 0.0448002 23.4015 0.015299C23.2577 -0.0142021 23.1084 -0.000846891 22.9721 0.0537091L1.15162 8.78221H1.15012L0.472125 9.05221C0.34371 9.10343 0.231953 9.18915 0.149198 9.2999C0.0664433 9.41066 0.0159116 9.54213 0.00318483 9.67979C-0.00954198 9.81746 0.0160314 9.95597 0.0770801 10.08C0.138129 10.2041 0.232277 10.3088 0.349125 10.3827L0.964125 10.7727L0.965625 10.7757L8.45812 15.5427L13.2251 23.0352L13.2281 23.0382L13.6181 23.6532C13.6923 23.7696 13.7971 23.8633 13.921 23.924C14.045 23.9846 14.1833 24.0099 14.3207 23.997C14.4581 23.9842 14.5892 23.9336 14.6998 23.851C14.8103 23.7684 14.8959 23.6569 14.9471 23.5287L23.9471 1.02871ZM21.1976 3.86371L9.95662 15.1047L9.63412 14.5977C9.57503 14.5047 9.49616 14.4258 9.40312 14.3667L8.89612 14.0442L20.1371 2.80321L21.9041 2.09671L21.1991 3.86371H21.1976Z" fill="white"/>
-</svg>
-Send Message</button>
+            <div class="checkbox">
+               
+                    <input type="hidden" value="1">
+                    
             </div>
-            <div class="form-group">
-                <!-- <input type="submit" class="btn btn-primary" /> -->
-                <div id="successMessage" style="display: none" class="badge bg-success">
-                    Message sent successfully!
-                </div>
-                <div id="errorMessage" style="display: none" class="badge bg-danger">
-                    There is something wrong, please try again later
-                </div>
+            <div class="buttons">
+                <button type="submit" class="apply-btn">Apply Now</button>
             </div>
+            
         </form>
     </div>
 
@@ -337,167 +351,101 @@ Send Message</button>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="assets/custom_app/360ithub/js/wow.min.js"></script>
     <script type="text/javascript" src="assets/custom_app/360ithub/js/custom.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
+ 
+    {% endif %}
 
-
-
-    <script>
-        window.frappe = {};
-        frappe.ready_events = [];
-        frappe.ready = function(fn) {
-            frappe.ready_events.push(fn);
-        }
-        window.dev_server = {{ dev_server }};
-        window.socketio_port = {{ (frappe.socketio_port or 9000) }};
-        window.show_language_picker = {{ show_language_picker or 'false' }};
-    </script>
-    
-    {% block base_scripts %}
-    <!-- js should be loaded in body! -->
-    <script>
-        frappe.boot = {{ boot }}
-        // for backward compatibility of some libs
-        frappe.sys_defaults = frappe.boot.sysdefaults;
-    </script>
-    {{ include_script('frappe-web.bundle.js') }}
-    {% endblock %}
-     
-    {%- for link in web_include_js %}
-    {{ include_script(link) }}
-    {%- endfor -%}
-     
-    {%- block script %}
-        {% if colocated_js -%}
-            <script>{{ colocated_js }}</script>
-        {%- endif %}
-    {%- endblock %}
-    <!-- csrf_token -->
-    {%- block body_include %}{{ body_include or "" }}{% endblock -%}
-    <!-- PSCODE STARTS -->
-    <!-- <script>
-        // Optionally, you can use JavaScript to enhance the form submission experience
-        document.getElementById("jobapply").addEventListener("submit", function (event) {
-    
-            event.preventDefault(); // Prevent the default form submission
-    
-            document.getElementById("sendBtn").disabled = true;
-    
-            // Submit the form using AJAX
-            var formData = new FormData(this);
-    
-            fetch(this.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-            
-                if (data.success) {
-                    // Show SweetAlert for success
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success!',
-                        text: 'Sent Successfully',
-                        timer: 3000, // 10 seconds
-                        showConfirmButton: false
-                    });
-    
-                    // Optionally, you can reset the form
-                    this.reset();
-                    document.getElementById('demoPopup').style.display = 'none';
-                } else {
-                    // Show SweetAlert for failure
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error!',
-                        text: 'Email sending failed: ' + data.error
-                    });
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        });
-    </script> -->
-    
-    <script>
-        /* $(document).ready(function () {
-             $("#contact-form").submit(function (event) {
-                 event.preventDefault();
-                 $("#successMessage").hide();
-                 $("#errorMessage").hide();
-                 $.ajax({
-                     type: "POST",
-                     url: "process_form.php",
-                     data: $("#contact-form").serialize(),
-                     success: function (response) {
-                         if (response === "success") {
-                             // Clear form fields
-                             $("#contact-form")[0].reset();
-                             // Hide error message
-                             $("#errorMessage").hide();
-                             // Show success message
-                             $("#successMessage").show();
-                         } else {
-                             // Hide success message
-                             $("#successMessage").hide();
-                             // Show error message
-                             $("#errorMessage").show();
-                         }
-                     },
-                     error: function () {
-                         $("#errorMessage").show();
-                     }
-                 });
-             });
-         }); */
-    
-    
-    
-         $(document).ready(function() {
-            $("#jobapply").submit(function(event) {
-                event.preventDefault(); // Prevent the default form submission behavior
-        
-                // Serialize the form data
-                var formData = $(this).serialize();
-        
-                // Send the data to the server-side method using Frappe's REST API
-                frappe.call({
-                    method: "custom_app.custom_app.api.jobapply",
-                    args: {
-                         form_data: formData 
-                    },
-                    type: "POST",
-                    contentType: "application/x-www-form-urlencoded", // Set the content type
-                    callback: function(response) {
-                        if (!response.exc) {
-                            // Hide error message
-                            $("#errorMessage").hide();
-        
-                            // Show success message using SweetAlert
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success',
-                                text: 'Your application has been submitted successfully!',
-                            }).then((result) => {
-                                // Redirect to the home page after user clicks 'OK' in SweetAlert
-                                if (result.isConfirmed) {
-                                    window.location.href = "/"; // Replace "/" with the actual URL of your home page
-                                }
-                            });
-        
-                            // Reset the form
-                            $("#jobapply")[0].reset();
-                        } else {
-                            alert("Error submitting form data: " + response.exc);
-                        }
-                    }
-                });
-            });
-        });
-        
-        
-     </script>
 </body>
+<script>
+    window.frappe = {};
+    frappe.ready_events = [];
+    frappe.ready = function(fn) {
+        frappe.ready_events.push(fn);
+    }
+    window.dev_server = {{ dev_server }};
+    window.socketio_port = {{ (frappe.socketio_port or 9000) }};
+    window.show_language_picker = {{ show_language_picker or 'false' }};
+</script>
+
+{% block base_scripts %}
+<!-- js should be loaded in body! -->
+<script>
+    frappe.boot = {{ boot }}
+    // for backward compatibility of some libs
+    frappe.sys_defaults = frappe.boot.sysdefaults;
+</script>
+{{ include_script('frappe-web.bundle.js') }}
+{% endblock %}
+ 
+{%- for link in web_include_js %}
+{{ include_script(link) }}
+{%- endfor -%}
+ 
+{%- block script %}
+    {% if colocated_js -%}
+        <script>{{ colocated_js }}</script>
+    {%- endif %}
+{%- endblock %}
+<!-- csrf_token -->
+{%- block body_include %}{{ body_include or "" }}{% endblock -%}
+<script>
+    $(document).ready(function() {
+        $("#support_ticket").submit(function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+    
+            // Serialize the form data
+            var formData = $(this).serialize();
+    
+            // Send the data to the server-side method using Frappe's REST API
+            frappe.call({
+                method: "custom_app.custom_app.api.support_ticket",
+                args: {
+                     form_data: formData 
+                },
+                type: "POST",
+                contentType: "application/x-www-form-urlencoded", // Set the content type
+                // Callback function for the Frappe REST API call
+                // Callback function for the Frappe REST API call
+                callback: function(response) {
+                    if (!response.exc) {
+                        // Hide error message
+                        $("#errorMessage").hide();
+
+                        // Build the short success message
+                        var successMessage = `
+                            Dear Customer,
+
+                            Thank you for reaching out to our support team. Your support ticket has been created successfully.
+
+                            Ticket ID: ${response.message}
+
+                            We appreciate your trust in our services.
+                        `;
+
+                        // Show the short success message using SweetAlert
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Support Ticket Submitted!',
+                            text: successMessage,
+                        }).then((result) => {
+                            // Redirect to the home page after the user clicks 'OK' in SweetAlert
+                            if (result.isConfirmed) {
+                                window.location.href = "/support_ticket_list"; // Replace "/" with the actual URL of your home page
+                            }
+                        });
+
+                        // Reset the form
+                        $("#support_ticket")[0].reset();
+                    } else {
+                        alert("Error submitting form data: " + response.exc);
+                    }
+                }
+
+
+            });
+        });
+    });
+    
+</script>
 
 </html>
