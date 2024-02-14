@@ -443,3 +443,9 @@ def add_multiple_tasks(data, parent):
 
 def on_doctype_update():
 	frappe.db.add_index("S Task", ["lft", "rgt"])
+
+
+
+
+
+

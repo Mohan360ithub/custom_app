@@ -12,6 +12,11 @@ def process_form_data(form_data):
         phone_no = frappe.form_dict.get("phone")
         subject = frappe.form_dict.get("subject")
         message = frappe.form_dict.get("message")
+        # erp_development = frappe.form_dict.get("erp_development")
+        # mobile_application_development = frappe.form_dict.get("mobile_application_development")
+        # custom_website_development = frappe.form_dict.get("custom_website_development")
+        # e_commerce_solution = frappe.form_dict.get("e_commerce_solution")
+        # uiux_solutions = frappe.form_dict.get("uiux_solutions")
 
         # Debugging: Print the values to check if they are correct
         # frappe.msgprint("field1 ==> " + str(name1) + " and field2 = " + str(email))
@@ -27,9 +32,21 @@ def process_form_data(form_data):
         phone_no = parsed_data.get("phone", [None])[0]
         subject = parsed_data.get("subject", [None])[0]
         message = parsed_data.get("message", [None])[0]
+        # Adjust checkbox values to be 1 for selected, and 0 for unselected
+        erp_development = "1" if parsed_data.get("erp_development") else "0"
+        mobile_application_development = "1" if parsed_data.get("mobile_application_development") else "0"
+        custom_website_development = "1" if parsed_data.get("custom_website_development") else "0"
+        e_commerce_solution = "1" if parsed_data.get("e_commerce_solution") else "0"
+        uiux_solutions = "1" if parsed_data.get("uiux_solutions") else "0"
 
-        # frappe.msgprint("field1 ==> "+name1+" and field2 = "+ email + phone_no+requirement)
-        # pass
+        # Create a dictionary of selected checkboxes
+        selected_checkboxes = {
+            "erp_development": erp_development,
+            "mobile_application_development": mobile_application_development,
+            "custom_website_development": custom_website_development,
+            "e_commerce_solution": e_commerce_solution,
+            "uiux_solutions": uiux_solutions,
+        }
 
 
         # frappe.msgprint("Form data ==> "+form_data)
@@ -46,6 +63,11 @@ def process_form_data(form_data):
         custom_data_doc.phone_no = phone_no
         custom_data_doc.subject = subject
         custom_data_doc.message = message
+        custom_data_doc.erp_development = erp_development
+        custom_data_doc.mobile_application_development = mobile_application_development
+        custom_data_doc.custom_website_development = custom_website_development
+        custom_data_doc.e_commerce_solutions = e_commerce_solution
+        custom_data_doc.uiux_solutions = uiux_solutions
         # frappe.msgprint("Form data ==> "+custom_data_doc)
 
         # Save the document to persist the changes

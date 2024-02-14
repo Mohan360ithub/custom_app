@@ -185,44 +185,48 @@
 					<div class="customView clearfix">
 						<form class=""  id="demoForm">
 							<input type="hidden" name="send">
-						  <div class="custom-choose">
-							 <input type="checkbox" id="opt-1" value="ERP Development" name="selected_options[]">
-							 <label for="opt-1">
-								 ERP Development
-							 </label>
-							 <input type="checkbox" id="opt-2" value="Mobile Application Development" name="selected_options[]">
-							 <label for="opt-2">
-								 Mobile Application Development
-							 </label>
-							 <input type="checkbox" id="opt-3" value="Custom Website Development" name="selected_options[]">
-							 <label for="opt-3">
-								 Custom Website Development
-							 </label>
-							  <input type="checkbox" id="opt-4" value="E-Commerce Solutions" name="selected_options[]">
-							 <label for="opt-4">
-								 E-Commerce Solutions
-							 </label> 
-							 <input type="checkbox" id="opt-5" value="UI/UX Solutions" name="selected_options[]">
-							 <label for="opt-5">
-								 UI/UX Solutions
-							 </label>  
-						  </div>
+							<div class="customView clearfix">
+								<input type="hidden" name="send">
+							  <div class="custom-choose">
+								 <input type="checkbox" id="opt-1" value="1" name="erp_development">
+								 <label for="opt-1">
+									 ERP Development
+								 </label>
+								 <input type="checkbox" id="opt-2" value="1" name="mobile_application_development">
+								 <label for="opt-2">
+									 Mobile Application Development
+								 </label>
+								 <input type="checkbox" id="opt-3" value="1" name="custom_website_development">
+								 <label for="opt-3">
+									 Custom Website Development
+								 </label>
+								  <input type="checkbox" id="opt-4" value="1" name="e_commerce_solution">
+								 <label for="opt-4">
+									 E-Commerce Solutions
+								 </label> 
+								 <input type="checkbox" id="opt-5" value="1" name="uiux_solutions">
+								 <label for="opt-5">
+									 UI/UX Solutions
+								 </label>  
+							  </div>
+							 
+						</div>
 					</div>
 					
 					<div class="form-group">
-						<input type="text" class="form-control" name="name" placeholder="Your name">
+						<input type="text" class="form-control" name="name" placeholder="Your name" required>
 					</div>
 					<div class="form-group">
-						<input type="email" class="form-control" name="email" placeholder="Email">
+						<input type="email" class="form-control" name="email" placeholder="Email" required>
 					</div>
 					<div class="form-group">
-						<input type="tel" class="form-control" name="phone" placeholder="Phone">
+						<input type="tel" class="form-control" name="phone" placeholder="Phone" required>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" name="subject" placeholder="Subject">
+						<input type="text" class="form-control" name="subject" placeholder="Subject" required>
 					</div>
 					<div class="form-group">
-						<textarea class="form-control message" name="message" placeholder="Message"></textarea>
+						<textarea class="form-control message" name="message" placeholder="Message" required></textarea>
 					</div>
 					<div class="form-group">
 						<button type="submit" name="send" id="sendBtn" class="btn btn-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -534,71 +538,40 @@
 {%- block body_include %}{{ body_include or "" }}{% endblock -%}
 <!-- PSCODE STARTS -->
 
- <script>
-	/* $(document).ready(function () {
-		 $("#contact-form").submit(function (event) {
-			 event.preventDefault();
-			 $("#successMessage").hide();
-			 $("#errorMessage").hide();
-			 $.ajax({
-				 type: "POST",
-				 url: "process_form.php",
-				 data: $("#contact-form").serialize(),
-				 success: function (response) {
-					 if (response === "success") {
-						 // Clear form fields
-						 $("#contact-form")[0].reset();
-						 // Hide error message
-						 $("#errorMessage").hide();
-						 // Show success message
-						 $("#successMessage").show();
-					 } else {
-						 // Hide success message
-						 $("#successMessage").hide();
-						 // Show error message
-						 $("#errorMessage").show();
-					 }
-				 },
-				 error: function () {
-					 $("#errorMessage").show();
-				 }
-			 });
-		 });
-	 }); */
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+	
 	 $(document).ready(function() {
-		 $("#demoForm").submit(function(event) {
-			 event.preventDefault(); // Prevent the default form submission behavior
-	 
-			 // Serialize the form data
-			 var formData = $(this).serialize();
-	 
-			 // Send the data to the server-side method using Frappe's AJAX API (frappe.call)
-			 frappe.call({
-				 method: "custom_app.custom_app.api.process_form_data",
-				 args: {
-					 form_data: formData
-				 },
-				 
-				 callback: function(response) {
-					 if (!response.exc) {
-						 // Hide error message
-						 $("#errorMessage").hide();
-						 // Show success message
-						 $("#successMessage").show();
-
-						 $("#demoForm")[0].reset();
-
-						 
-					 } else {
-						 alert("Error submitting form data: " + response.exc);
-					 }
-				 }
-			 });
-		 });
-	 });
+		$("#demoForm").submit(function(event) {
+			event.preventDefault(); // Prevent the default form submission behavior
+	
+			// Serialize the form data
+			var formData = $(this).serialize();
+	
+			// Send the data to the server-side method using Frappe's AJAX API (frappe.call)
+			frappe.call({
+				method: "custom_app.custom_app.api.process_form_data",
+				args: {
+					form_data: formData
+				},
+				callback: function(response) {
+					if (!response.exc) {
+						
+	
+						// Reset the form
+						$("#demoForm")[0].reset();
+	
+						// Use SweetAlert for a more user-friendly notification
+						Swal.fire("Success!", "Form submitted successfully", "success");
+					} else {
+						// Display error using SweetAlert
+						Swal.fire("Error", "Error submitting form data: " + response.exc, "error");
+					}
+				}
+			});
+		});
+	});
+	
  </script>
  <script>
 	$(document).ready(function() {
@@ -617,26 +590,22 @@
 				
 				callback: function(response) {
 					if (!response.exc) {
-						// Hide error message
-						$("#errorMessage1").hide();
-						// Show success message
-						$("#successMessage1").show();
+						
 
 						$("#popdemoForm")[0].reset();
-						setTimeout(function() {
-							window.location.reload();
-						}, 2000); 
+						Swal.fire("Success!", "Form submitted successfully", "success")
+						.then(function() {
+                            // Reload the page after the SweetAlert is closed
+                            location.reload();
+                        });
 
-						
 					} else {
-						alert("Error submitting form data: " + response.exc);
+						Swal.fire("Error", "Error submitting form data: " + response.exc, "error");
 					}
 				}
 			});
 		});
 	});
  </script>
-
-
 </body>
 </html>
