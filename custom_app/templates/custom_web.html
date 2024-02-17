@@ -1,0 +1,206 @@
+
+
+{% block content %}{% endblock %}
+<!-- ============ FOOTER START ========== -->
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-6">
+				<p><img src="assets/custom_app/360ithub/images/logo.svg" alt="360 IT Hub Pvt" /></p>
+				<p>360 IT Hub Pvt. Ltd. delivers innovative IT solutions, from software development to web design
+					and digital marketing, ensuring tailored services for diverse business needs.</p>
+				<div class="socialfooter clearfix">
+					<a href="https://www.facebook.com/360ithub/" target="_blank" class="fa fa-facebook"></a>
+					<a href="https://www.linkedin.com/company/360ithub/mycompany/" target="_blank"
+						class="fa fa-linkedin"></a>
+					<a href="https://www.instagram.com/360ithub/" target="_blank" class="fa fa-instagram"></a>
+					<a href="https://twitter.com/360ithub" target="_blank" class="fa fa-twitter"></a>
+					<!-- <a href="#" class="fa fa-youtube"></a> -->
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-3">
+				<h2>Product</h2>
+				<ul>
+					<li><a href="#">Features</a></li>
+					<li><a href="#">Case studies</a></li>
+					<li><a href="#">Reviews</a></li>
+					<li><a href="#">Updates</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-2 col-md-3">
+				<h2>Company</h2>
+				<ul>
+					<li><a href="about">About</a></li>
+					<li><a href="contacts">Contact us</a></li>
+					<li><a href="careers">Careers</a></li>
+					<li><a href="culture">Culture</a></li>
+					<li><a href="blogs">Blog</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-2 col-md-3">
+				<h2>Support</h2>
+				<ul>
+					<li><a href="#">Getting started</a></li>
+					<li><a href="#">Help center</a></li>
+					<li><a href="#">Server status</a></li>
+					<li><a href="#">Report a bug</a></li>
+					<li><a href="#">Chat support</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<h2>Contact us</h2>
+				<div class="foot-work position-relative">
+					<span class="flaticon-mail-inbox-app"></span>
+					<a href="mailto:hello@360ithub.com?cc=sales@360ithub.com" target="_blank">hello@360ithub.com</a>
+				</div>
+				<div class="foot-work position-relative">
+					<span class="flaticon-phone"></span>
+					<a href="tel:+91 95137 77001" target="_blank">+91 95137 77001</a>
+				</div>
+				<div class="foot-work position-relative">
+					<span class="flaticon-maps"></span>
+					<a href="https://www.google.com/maps/place/360+IT+HUB+PRIVATE+LIMITED/@12.9123141,77.6237422,14.32z/data=!4m6!3m5!1s0x3bae15e76e62354d:0x28bc870ecf5535b6!8m2!3d12.9156626!4d77.621292!16s%2Fg%2F11d_ysfvq2?entry=ttu"
+						target="_blank">228, SAVIRAM, 1ST CROSS, 39th Main Rd, KAS Officers Colony, BTM 2nd Stage,
+						Bengaluru, Karnataka
+						560068</a>
+
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-12">
+					Copyright © 2023 360 IT HUB
+				</div>
+				<div class="col-lg-6 col-md-6 col-12">
+					<div class="allright">All Rights Reserved | <a href="terms-and-conditions">Terms and
+							Conditions</a> | <a href="/360-html-code/terms-and-conditions">Privacy Policy</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- JavaScript	-->
+<script type="text/javascript" src="assets/custom_app/360ithub/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="assets/custom_app/360ithub/js/popper.min.js"></script>
+<script type="text/javascript" src="assets/custom_app/360ithub/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="assets/custom_app/360ithub/js/slick.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="assets/custom_app/360ithub/js/wow.min.js"></script>
+<!-- <script type="text/javascript" src="assets/custom_app/360ithub/js/custom.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+
+
+<!-- POPUP script  -->
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		var demoBtns = document.querySelectorAll('.btn[data-target="#demoPopup"]');
+		var callbackBtns = document.querySelectorAll('.btn[data-target="#callbackPopup"]');
+		var closeButtons = document.querySelectorAll('.popup .close');
+
+
+	// PSCODE STARTS
+
+	// PSCODE ENDS
+
+		// Add click event listener to all buttons that should trigger the demo popup
+		demoBtns.forEach(function (btn) {
+			btn.addEventListener('click', function (event) {
+				event.preventDefault();
+				document.getElementById('demoPopup').style.display = 'flex';
+			});
+		});
+
+		// Add click event listener to all buttons that should trigger the callback popup
+		callbackBtns.forEach(function (btn) {
+			btn.addEventListener('click', function (event) {
+				event.preventDefault();
+				document.getElementById('callbackPopup').style.display = 'flex';
+			});
+		});
+
+		// Add click event listener to all close buttons in popups
+		closeButtons.forEach(function (btn) {
+			btn.addEventListener('click', function (event) {
+				event.preventDefault();
+				document.getElementById('demoPopup').style.display = 'none';
+			});
+		});
+	});
+</script>
+
+<!-- PSCODE STARTS -->
+<script>
+    window.frappe = {};
+    frappe.ready_events = [];
+    frappe.ready = function(fn) {
+        frappe.ready_events.push(fn);
+    }
+    window.dev_server = {{ dev_server }};
+    window.socketio_port = {{ (frappe.socketio_port or 9000) }};
+    window.show_language_picker = {{ show_language_picker or 'false' }};
+</script>
+
+{% block base_scripts %}
+<!-- js should be loaded in body! -->
+<script>
+    frappe.boot = {{ boot }}
+    // for backward compatibility of some libs
+    frappe.sys_defaults = frappe.boot.sysdefaults;
+</script>
+{{ include_script('frappe-web.bundle.js') }}
+{% endblock %}
+ 
+{%- for link in web_include_js %}
+{{ include_script(link) }}
+{%- endfor -%}
+ 
+{%- block script %}
+    {% if colocated_js -%}
+        <script>{{ colocated_js }}</script>
+    {%- endif %}
+{%- endblock %}
+<!-- csrf_token -->
+{%- block body_include %}{{ body_include or "" }}{% endblock -%}
+<!-- PSCODE STARTS -->
+
+ <script>
+	/* $(document).ready(function () {
+		 $("#contact-form").submit(function (event) {
+			 event.preventDefault();
+			 $("#successMessage").hide();
+			 $("#errorMessage").hide();
+			 $.ajax({
+				 type: "POST",
+				 url: "process_form.php",
+				 data: $("#contact-form").serialize(),
+				 success: function (response) {
+					 if (response === "success") {
+						 // Clear form fields
+						 $("#contact-form")[0].reset();
+						 // Hide error message
+						 $("#errorMessage").hide();
+						 // Show success message
+						 $("#successMessage").show();
+					 } else {
+						 // Hide success message
+						 $("#successMessage").hide();
+						 // Show error message
+						 $("#errorMessage").show();
+					 }
+				 },
+				 error: function () {
+					 $("#errorMessage").show();
+				 }
+			 });
+		 });
+	 }); */
+
+
+ </script>
+</body>
+</html>
