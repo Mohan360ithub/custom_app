@@ -703,20 +703,23 @@
 		<div class="maintitle">
 			<h2 class="wow fadeInDown" data-wow-duration="1s">From <span>The Blog</span></h2>
 		</div>
+		
 		<div class="slider slider-blog">
-			<div>
-				<div class="blogcard clearfix bg-white">
-					<div class="blog-thumb"><img src="assets/custom_app/360ithub/images/blog-1.png" class="img-fluid" alt="ERP" /></div>
-					<div class="p-2">
-						<h2><a href="#">Top Trends must know in 2023 for ERP healthcare industry</a></h2>
-						<p>Write an amazing description in this dedicated card section. Each word counts. </p>
-						<p><a href="#" class="btn btn-blue yallow"><span>Read more <ion-icon
-										name="arrow-forward"></ion-icon></span></a></p>
-
+			{% for blog in blog %}
+				<div>
+					<div class="blogcard clearfix bg-white">
+						<div class="blog-thumb"><img src="{{blog.blog_image}}" class="img-fluid" alt="img" /></div>
+						<div class="p-2">
+							<h2><a href="blog_details?id={{ blog.name }}" >{{blog.blog_heading}}</a></h2>
+							<!-- <p>{{ blog.blog_content  }}</p> -->
+							<p><a href="blog_details?id={{ blog.name }}" class="btn btn-blue yallow"><span>Read more <ion-icon
+											name="arrow-forward"></ion-icon></span></a></p>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div>
+			{% endfor %}
+
+			<!-- <div>
 				<div class="blogcard clearfix bg-white">
 					<div class="blog-thumb"><img src="assets/custom_app/360ithub/images/blog-2.png" class="img-fluid" alt="ERP" /></div>
 					<div class="p-2">
@@ -745,7 +748,7 @@
 						<p><a href="#" class="btn btn-blue">Read more</a></p>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </section>
