@@ -80,6 +80,38 @@ def process_form_data(form_data):
 
 
 
+@frappe.whitelist(allow_guest=True)
+def process_form_data_blog(form_data):
+
+    try:
+        
+        name = frappe.form_dict.get("name")
+        comment_text = frappe.form_dict.get("comment_text")
+      
+        parsed_data = urllib.parse.parse_qs(form_data)
+       
+        name = parsed_data.get("name", [None])[0]
+        comment_text = parsed_data.get("comment_text", [None])[0]
+        
+
+
+    
+
+        # Replace "YourCustomDoctype" with the actual name of your Doctype
+        blog = frappe.new_doc("Blog Comment")
+        blog.blog_id = name
+        blog.comment = comment_text
+        
+        # frappe.msgprint("Form data ==> "+blog)
+
+        # Save the document to persist the changes
+        blog.insert()
+
+        return ("Data inserted successfully.")
+    except Exception as e:
+        frappe.log_error(str(e))
+        return "Error inserting data: " + str(e)
+
 
 # from frappe.utils.file_manager import save_file
 

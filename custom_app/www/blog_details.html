@@ -523,6 +523,52 @@
       padding: 100px 0px !important;
     }
     }
+
+    #blogcomment {
+      margin-top: 20px;
+  }
+
+  #blogcomment textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+  }
+
+  #sendBtn {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+  }
+
+  #comment {
+    list-style-type: none;
+    padding: 0;
+}
+
+.custom-textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.comment-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.comment-text {
+    margin-bottom: 10px;
+}
+
+.comment-date {
+    color: #888;
+}
+
   </style>
 </head>
 
@@ -626,10 +672,20 @@
             <div class="meta-top">
               <ul>
                 <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">{{publisher_name}}</a></li>
-                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time
-                      datetime="2020-01-01">{{posted_on}}</time></a></li>
-                <!-- <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12
-                    Comments</a></li> -->
+                <li class="d-flex align-items-center">
+                  <i class="bi bi-clock"></i>
+                  {% if posted_on and posted_on is not none %}
+                      <a href="blog-details.html">
+                          <time datetime="{{ posted_on }}">
+                              {{ frappe.utils.format_datetime(posted_on, 'dd-MMM-yyyy HH:mm:ss') }}
+                          </time>
+                      </a>
+                  {% else %}
+                      <span>No date available</span>
+                  {% endif %}
+              </li>
+                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">{{comment_len}}
+                    Comments</a></li>
               </ul>
             </div><!-- End meta top -->
 
@@ -655,6 +711,37 @@
             </div><!-- End meta bottom -->
 
           </article>
+          <form id="blogcomment">
+            <input type="hidden" value="{{ name }}" name="name">
+            <textarea name="comment_text" placeholder="Add your comment" style="width: 100%; height: 100px; padding: 10px; font-size: 14px;"></textarea>
+            <button type="submit" name="send" id="sendBtn" class="btn btn-blue">
+                Submit
+            </button>
+        </form>
+        
+        <br><br>
+        {% if comments %}
+    <h3>Comments:</h3>
+    <br>
+    <ul id="comment">
+        {% for comment in comments %}
+            <li class="comment-item">
+                <p class="comment-text">{{ comment.comment }}</p>
+                {% if comment.commented_on_date %}
+                    <p class="comment-date" style="font-size: small; font-family: 'YourFont', sans-serif;">
+                        {{ comment.commented_on_date.strftime('%d-%b-%Y') }}
+                    </p>
+                {% else %}
+                    <p class="comment-date" style="font-size: small; font-family: 'YourFont', sans-serif;">
+                        No date available
+                    </p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
           <!-- End blog post -->
 
           <!-- <div class="post-author d-flex align-items-center">
@@ -916,7 +1003,7 @@
   <!-- PSCODE STARTS -->
   <!-- <script>
     // Optionally, you can use JavaScript to enhance the form submission experience
-    document.getElementById("demoForm").addEventListener("submit", function (event) {
+    document.getElementById("blogcomment").addEventListener("submit", function (event) {
       event.preventDefault(); // Prevent the default form submission
 
       // Submit the form using AJAX
@@ -1156,6 +1243,74 @@
 
     });
   </script>
+  <script>
+    window.frappe = {};
+    frappe.ready_events = [];
+    frappe.ready = function(fn) {
+        frappe.ready_events.push(fn);
+    }
+    window.dev_server = {{ dev_server }};
+    window.socketio_port = {{ (frappe.socketio_port or 9000) }};
+    window.show_language_picker = {{ show_language_picker or 'false' }};
+</script>
+
+{% block base_scripts %}
+<!-- js should be loaded in body! -->
+<script>
+    frappe.boot = {{ boot }}
+    // for backward compatibility of some libs
+    frappe.sys_defaults = frappe.boot.sysdefaults;
+</script>
+{{ include_script('frappe-web.bundle.js') }}
+{% endblock %}
+ 
+{%- for link in web_include_js %}
+{{ include_script(link) }}
+{%- endfor -%}
+ 
+{%- block script %}
+    {% if colocated_js -%}
+        <script>{{ colocated_js }}</script>
+    {%- endif %}
+{%- endblock %}
+<!-- csrf_token -->
+{%- block body_include %}{{ body_include or "" }}{% endblock -%}
+
+<script>
+	
+  $(document).ready(function() {
+   $("#blogcomment").submit(function(event) {
+     event.preventDefault(); // Prevent the default form submission behavior
+ 
+     // Serialize the form data
+     var formData = $(this).serialize();
+          var commentsContainer = $("#comment");
+
+     // Send the data to the server-side method using Frappe's AJAX API (frappe.call)
+     frappe.call({
+       method: "custom_app.custom_app.api.process_form_data_blog",
+       args: {
+         form_data: formData
+       },
+       
+       callback: function(response) {
+         if (!response.exc) {
+           
+ 
+           // Reset the form
+           $("#blogcomment")[0].reset();
+           location.reload();
+           // Use SweetAlert for a more user-friendly notification
+         } else {
+           // Display error using SweetAlert
+           Swal.fire("Error", "Error submitting form data: " + response.exc, "error");
+         }
+       }
+     });
+   });
+ });
+ 
+</script>
 </body>
 
 </html>
