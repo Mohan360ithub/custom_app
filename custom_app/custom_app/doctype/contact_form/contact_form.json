@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CNT-{MM}-{####}",
+ "creation": "2024-02-07 16:55:34.916247",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "email",
+  "message",
+  "column_break_mmer",
+  "phone_no",
+  "subject",
+  "erp_development",
+  "mobile_application_development",
+  "custom_website_development",
+  "e_commerce_solutions",
+  "uiux_solutions"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Small Text",
+   "label": "Message"
+  },
+  {
+   "fieldname": "column_break_mmer",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phone_no",
+   "fieldtype": "Data",
+   "label": "Phone No."
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject"
+  },
+  {
+   "default": "0",
+   "fieldname": "erp_development",
+   "fieldtype": "Check",
+   "label": "ERP Development"
+  },
+  {
+   "default": "0",
+   "fieldname": "mobile_application_development",
+   "fieldtype": "Check",
+   "label": "Mobile Application Development"
+  },
+  {
+   "default": "0",
+   "fieldname": "custom_website_development",
+   "fieldtype": "Check",
+   "label": "Custom Website Development"
+  },
+  {
+   "default": "0",
+   "fieldname": "e_commerce_solutions",
+   "fieldtype": "Check",
+   "label": "E Commerce Solutions"
+  },
+  {
+   "default": "0",
+   "fieldname": "uiux_solutions",
+   "fieldtype": "Check",
+   "label": "UI/UX Solutions"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-14 11:39:31.315073",
+ "modified_by": "Administrator",
+ "module": "custom_app",
+ "name": "Contact Form",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "name1"
+}

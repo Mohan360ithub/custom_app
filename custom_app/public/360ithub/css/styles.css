@@ -1708,3 +1708,47 @@ a.phone i, a.email i, a.email-domain i{
   animation-iteration-count: 1;
 }
 
+/* ====================Careers page==================== */
+.career-hero {
+  position: relative;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  color: #fff; 
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 174, 239, 0.8);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero-text h1{
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 48px;
+  margin-bottom: 20px;
+  padding-top: 80px;
+}
+
+.hero-text p{
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+.display-4{
+  
+}
+

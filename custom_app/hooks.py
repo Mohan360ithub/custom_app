@@ -58,6 +58,11 @@ app_license = "mit"
 # Jinja
 # ----------
 
+
+# "whitelisted_methods": {
+#     "custom_app.custom_app.jobapply": True
+# }
+
 # add methods and filters to jinja environment
 # jinja = {
 # 	"methods": "custom_app.utils.jinja_methods",

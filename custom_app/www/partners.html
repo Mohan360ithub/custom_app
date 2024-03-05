@@ -1,282 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "templates/custom_web.html" %}
+{% block content %} 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="icon" type="image/png" href="assets/custom_app/360ithub/images/favicon.png">
-    <link href="assets/custom_app/360ithub/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="assets/custom_app/360ithub/css/animate.css">
-    <link rel="stylesheet" href="assets/custom_app/360ithub/css/font-awesome.min.css">
-    <link href="assets/custom_app/360ithub/css/slick.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/custom_app/360ithub/css/flaticon.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/custom_app/360ithub/css/styles.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/custom_app/360ithub/css/responsive.css" rel="stylesheet" type="text/css"/>
+    
     <link rel="stylesheet" href="assets/custom_app/360ithub/css/partners.css">
-
+	
 </head>
-<body>
-    <!-- ============ HEADER SECTION START ========== -->
-<header>
-	<!-- black strip  -->
-	<div class="contact-container">
-		<div class="contact-info">
-			<p>Have any question?</p>
-			<a href="tel:+91 95137 77001" class="phone"> <i class="fa fa-phone"></i> +91 95137 77001</a>
-			<a href="mailto:hello@360ithub.com?cc=sales@360ithub.com" class="email"><i class="fa fa-envelope"></i> hello@360ithub.com</a>
-			<a href="#" class="email"><i class="fa fa-skype" aria-hidden="true"></i> 360ithub</a>
-		</div>
-		<div class="social-media-icons">
-			<a href="https://www.facebook.com/360ithub" target="_blank" class="icon-link"><i class="fa fa-facebook"></i></a>
-			<a href="https://www.instagram.com/360ithub/" target="_blank" class="icon-link"><i class="fa fa-instagram"></i></a>
-			<a href="https://twitter.com/360ithub" target="_blank" class="icon-link"><i class="fa fa-twitter"></i></a>
-			<a href="https://www.linkedin.com/company/360ithub" target="_blank" class="icon-link"><i class="fa fa-linkedin"></i></a>
-		</div>
-	</div>
-	<nav class="navbar navbar-expand-md" style="background: #fff;">
-		<div class="container">
-			<!-- Brand -->
-			<a class="navbar-brand" href="index.html">
-				<img src="assets/custom_app/360ithub/images/logo.svg" alt="" /> </a>
-			</a>
 
-			<!-- Toggler/collapsibe Button -->
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<!-- Navbar links -->
-			<div class="collapse navbar-collapse" id="collapsibleNavbar">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle active" href="#" id="navbardrop" data-toggle="dropdown">
-							About
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="about.html"><img src="assets/custom_app/360ithub/images/Team-menu.svg"
-									alt="" /> Our Team</a>
-							<a class="dropdown-item active" href="partners.html"><img src="assets/custom_app/360ithub/images/Partners-menu (2).svg"
-									alt="" /> Our Partners</a>
-							<a class="dropdown-item" href="talent.html"><img src="assets/custom_app/360ithub/images/talentfromus-menu.svg"
-									alt="" /> Hire a Talent From US</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-							Services
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="erp-implementation.html"><img src="assets/custom_app/360ithub/images/menu1.svg"
-									alt="" /> ERP Implementation</a>
-							<a class="dropdown-item" href="mobile-app-development.html"><img src="assets/custom_app/360ithub/images/menu2.svg"
-									alt="" /> Mobile App Development</a>
-							<a class="dropdown-item" href="website-development.html"><img src="assets/custom_app/360ithub/images/menu3.svg"
-									alt="" /> Website Development</a>
-							<a class="dropdown-item" href="E-commerce.html"><img src="assets/custom_app/360ithub/images/menu4.svg"
-										alt="" /> E-Commerce Solutions</a>
-							<a class="dropdown-item nobdr" href="ui-ux-solutions.html"><img src="assets/custom_app/360ithub/images/menu5.svg"
-										alt="" /> UI/UX Solutions</a>
-						</div>
-					</li>
-					<!-- <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li> -->
-					<li class="nav-item"><a class="nav-link" href="contacts.html">Contact</a></li>
-					<li class="nav-item"><a class="nav-link" href="/jobs">Careers</a></li>
-					<li class="nav-item"><a class="nav-link" href="/issue/list">Issue</a></li>
-				</ul>
-			</div>
-			<a class="frappe-brand" href="index.html">
-				<img src="assets/custom_app/360ithub/images/frappe.png" alt="" /> </a>
-			</a>
-		</div>
-	</nav>
-</header>
 
-<section class="hero">
-    <div class="partnerhero">
-        <h1>Unlocking Synergies: Our Dynamic Partnership Network</h1>
-        <p>Join our collaborative journey as we weave innovation and expertise into a tapestry of partnerships. Together, we craft solutions that transcend boundaries, empowering businesses to thrive in a dynamic digital landscape.</p>
-    </div>
-    <div class="">
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container">
+      <h1 data-aos="zoom-in">Unlocking Synergies: Our Dynamic Partnership Network
+	</h1>
+      <p data-aos="fade-up">Join our collaborative journey as we weave innovation and expertise into a tapestry of partnerships. Together, we craft solutions that transcend boundaries, empowering businesses to thrive in a dynamic digital landscape.
+	  </p>
+      <div class="">
         <a href="#" data-target="#demoPopup" class="btn btn-blue wow fadeInUp" data-wow-duration="3s"
                     data-wow-delay="1s"><span>Partner with Us</span></a>
     </div>
-</section>
-
-<!-- ====================Whatsapp Floating============ -->
-<div class="whatsappdesk"><a href="https://wa.me/919513777001" target="_blank" class="whatsapp-color"><i class="fa fa-whatsapp"></i></a></div>
-
-<div id="main-div">
-  <div id="main-button" class="wave">
-	<i class="fa fa-comments fa-times"></i>
-  </div>
-  <a href="tel:+919513777001" class="telegram-color"><i class="fa fa-phone" aria-hidden="true"></i></a>
-  <a href="mailto:hello@360ithub.com?cc=sales@360ithub.com" class="messenger-color"><i class="fa fa-envelope"></i></a>
-</div>	
-
-<!-- ----------------------Why us---------------------- -->
-<div class="feat bg-gray pt-5 pb-5">
-    <div class="maintitle">
-        <h2 class="wow fadeInUp" data-wow-duration="2s">Why Partner <span> With 360 IT HUB</span></h2>
     </div>
-    <div class="container">
+  </section><!-- End Hero -->
+
+    <!-- ---------------------------------------------Why choose us----------------- -->
+  <section id="services" class="services">
+    <div class="container" data-aos="fade-up">
+
       <div class="row">
-        <div class="section-head col-sm-12">
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-globe"></i></span>
-            <h6>Diverse Solutions Portfolio</h6>
-            <p>Partner with us for a diverse solutions portfolio—from ERP to mobile and web development—expanding your market reach and unlocking business growth potential.</p>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" >
+          <div class="icon-box" style="background-color: #00aeef;">
+            <h4 style="color: #fff;">Why Partner with 360 IT HUB?</h4>
+            <div class="icon"><img src="assets/custom_app/360ithub/images/undeline.svg" alt="icon" style="width: 600px; margin-left: 120px;"></div>
+            <p style="color: #fff;">360 IT HUB: Elevate your business with comprehensive ERP, seamless UI/UX, innovative mobile and web development, and dynamic e-commerce solutions.</p>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-anchor"></i></span>
-            <h6>Innovative Technology Stack</h6>
-            <p>Committed to partner success, we offer collaborative support, training, resources, and dedicated assistance, empowering partners with knowledge and tools for market excellence.</p>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box" style="background-color: #ffffff;">
+            <div class="icon"><img src="assets/custom_app/360ithub/images/handshake.svg" alt="icon" style="width: 60px;"></div>
+            <h4><a href="">Diverse Solutions Portfolio
+			</a></h4>
+            <p>Partner with us for a diverse solutions portfolio—from ERP to mobile and web development—expanding your market reach and unlocking business growth potential.
+            </p>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-hourglass-half"></i></span>
-            <h6>Collaborative Support & Training</h6>
-            <p>Join us in expanding markets. Utilize our network and reputation to reach new clients. Our partnership fuels mutual growth, offering exciting opportunities for success. </p>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+          <div class="icon-box" style="background-color: #e5f2fc;">
+            <div class="icon"><img src="assets/custom_app/360ithub/images/handshake.svg" alt="icon" style="width: 60px;"></div>
+            <h4><a href="">Innovative Technology Stack
+			</a></h4>
+            <p>Committed to partner success, we offer collaborative support, training, resources, and dedicated assistance, empowering partners with knowledge and tools for market excellence.
+            </p>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Market Expansion Opportunities</h6>
-            <p>Discover tailored partnership models for diverse needs. Whether a small agency or large enterprise, our flexible programs cater to unique goals. Explore customized collaboration today.</p>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            <div class="icon"><img src="assets/custom_app/360ithub/images/handshake.svg" alt="icon" style="width: 60px;"></div>
+            <h4><a href="">Collaborative Support & Training
+			</a></h4>
+            <p>Join us in expanding markets. Utilize our network and reputation to reach new clients. Our partnership fuels mutual growth, offering exciting opportunities for success.
+            </p>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Tailored Partnership Programs</h6>
-            <p>Holding back technology to preserve broken business models is like allowing blacksmiths to veto the internal combustion engine in order to protect their horseshoes.</p>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box" style="background-color: #e5f2fc;" >
+            <div class="icon"><img src="assets/custom_app/360ithub/images/handshake.svg" alt="icon" style="width: 60px;"></div>
+            <h4><a href="">Market Expansion Opportunities
+			</a></h4>
+            <p>Discover tailored partnership models for diverse needs. Whether a small agency or large enterprise, our flexible programs cater to unique goals. Explore customized collaboration today.
+            </p>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Commitment to Excellence</h6>
-            <p>Align with us for a partnership rooted in excellence, integrity, and client satisfaction, fostering success through high-quality solutions and exceptional customer service.</p>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="icon-box">
+            <div class="icon"><img src="assets/custom_app/360ithub/images/handshake.svg" alt="icon" style="width: 60px;"></div>
+            <h4><a href="">Commitment to Excellence
+            </a></h4>
+            <p>Align with us for a partnership rooted in excellence, integrity, and client satisfaction, fostering success through high-quality solutions and exceptional customer service.
+            </p>
           </div>
         </div>
+
       </div>
-    </div>
-  </div>
-</div>
 
-<!-- --------------------------------------------Partershipform---------------------- -->
-<section class="partnershipform">
-    <div class="developershiring">
-        <div class="howwehire">
-            <div class="text">
-                <h2>Client satisfaction is <br>our utmost priority. <br> We remain unbiased toward <br> any technology.</h2>
-                <p>We closely collaborate with top ERP providers, ensuring personalized client engagement, language barrier resolution, and constant updates awareness. Specializing in ERP, web and mobile development, UI/UX, and e-commerce, our diverse skills enable tailored, integrated solutions that fuse ERP functionalities with the latest technologies for holistic client support.</p>
+    </div>
+  </section>
+
+    <!-- ====================Whatsapp Floating============ -->
+ <div class="whatsappdesk"><a href="https://wa.me/919513777001" target="_blank" class="whatsapp-color"><i class="fa fa-whatsapp"></i></a></div>
+
+ <div id="main-div">
+   <div id="main-button" class="wave">
+     <i class="fa fa-comments fa-times"></i>
+   </div>
+   <a href="tel:+919513777001" class="telegram-color"><i class="fa fa-phone" aria-hidden="true"></i></a>
+   <a href="mailto:hello@360ithub.com?cc=sales@360ithub.com" class="messenger-color"><i class="fa fa-envelope"></i></a>
+ </div>	
+
+    <!-- ------------------------------------Hiredevelopers------------------ -->
+
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-md-6 hiring" style="background-color: #00aeef;">
+                <h3>Client satisfaction is
+					our utmost priority.
+					We remain unbiased toward
+					any technology.</h3>
+                <p style="padding-left: 30px; padding-right: 30px; padding-bottom: 40px;">We closely collaborate with top ERP providers, ensuring personalized client engagement, language barrier resolution, and constant updates awareness. Specializing in ERP, web and mobile development, UI/UX, and e-commerce, our diverse skills enable tailored, integrated solutions that fuse ERP functionalities with the latest technologies for holistic client support.
+                </p>
+            </div>
+    
+            <!-- Right Side: Contact Form -->
+            <div class="col-md-6 hiring" style="background-color: #f9f9f9;">
+                <form id="demoForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control" name="phone" id="name" placeholder="Your Mobile" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell Us About Your Company" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+					<div class="form-group">
+						<!-- <input type="submit" class="btn btn-primary" /> -->
+						<div id="successMessage" style="display: none" class="badge bg-success">
+							Message sent successfully!
+						</div>
+						<div id="errorMessage" style="display: none" class="badge bg-danger">
+							There is something wrong, please try again later
+						</div>
+					</div>
+                </form>
             </div>
         </div>
-        
-        
-        <div class="hiringform">
-            <div class="form">
-            <form action="#" method="post">
-                <label for="email">Name:</label>
-                <input type="text" id="name" name="name" class="underline-input" required>
-
-                <label for="email">Phone:</label>
-                <input type="tel" id="phone" name="phone" class="underline-input" required>
-        
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" class="underline-input" required>
-                        
-                <label for="message">Tell Us About Your Company:</label>
-                <textarea id="message" name="message" class="underline-input" required></textarea>
-        
-                <div class="talentbuttonholder">
-                    <a href="#" class="talentbutton">Submit Now</a>
-                </div>
-            </form>
-            </div>
-        </div>
     </div>
-</section>
+    
+
 
 <!-- ============ FOOTER START ========== -->
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3 col-md-6">
-				<p><img src="assets/custom_app/360ithub/images/logo.svg" alt="360 IT Hub Pvt" /></p>
-				<p>360 IT Hub Pvt. Ltd. delivers innovative IT solutions, from software development to web design
-					and digital marketing, ensuring tailored services for diverse business needs.</p>
-				<div class="socialfooter clearfix">
-					<a href="https://www.facebook.com/360ithub/" target="_blank" class="fa fa-facebook"></a>
-					<a href="https://www.linkedin.com/company/360ithub/mycompany/" target="_blank"
-						class="fa fa-linkedin"></a>
-					<a href="https://www.instagram.com/360ithub/" target="_blank" class="fa fa-instagram"></a>
-					<a href="https://twitter.com/360ithub" target="_blank" class="fa fa-twitter"></a>
-					<!-- <a href="#" class="fa fa-youtube"></a> -->
-				</div>
-			</div>
-			<div class="col-lg-2 col-md-3">
-				<h2>Product</h2>
-				<ul>
-					<li><a href="#">Features</a></li>
-					<li><a href="#">Case studies</a></li>
-					<li><a href="#">Reviews</a></li>
-					<li><a href="#">Updates</a></li>
-				</ul>
-			</div>
-			<div class="col-lg-2 col-md-3">
-				<h2>Company</h2>
-				<ul>
-					<li><a href="about.html">About</a></li>
-					<li><a href="contacts.html">Contact us</a></li>
-					<li><a href="careers.html">Careers</a></li>
-					<li><a href="culture.html">Culture</a></li>
-					<li><a href="blogs.html">Blog</a></li>
-				</ul>
-			</div>
-			<div class="col-lg-2 col-md-3">
-				<h2>Support</h2>
-				<ul>
-					<li><a href="#">Getting started</a></li>
-					<li><a href="#">Help center</a></li>
-					<li><a href="#">Server status</a></li>
-					<li><a href="#">Report a bug</a></li>
-					<li><a href="#">Chat support</a></li>
-				</ul>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<h2>Contact us</h2>
-				<div class="foot-work position-relative">
-					<span class="flaticon-mail-inbox-app"></span>
-					<a href="mailto:hello@360ithub.com?cc=sales@360ithub.com" target="_blank">hello@360ithub.com</a>
-				</div>
-				<div class="foot-work position-relative">
-					<span class="flaticon-phone"></span>
-					<a href="tel:+91 95137 77001" target="_blank">+91 95137 77001</a>
-				</div>
-				<div class="foot-work position-relative">
-					<span class="flaticon-maps"></span>
-					<a href="https://www.google.com/maps/place/360+IT+HUB+PRIVATE+LIMITED/@12.9123141,77.6237422,14.32z/data=!4m6!3m5!1s0x3bae15e76e62354d:0x28bc870ecf5535b6!8m2!3d12.9156626!4d77.621292!16s%2Fg%2F11d_ysfvq2?entry=ttu"
-						target="_blank">228, SAVIRAM, 1ST CROSS, 39th Main Rd, KAS Officers Colony, BTM 2nd Stage,
-						Bengaluru, Karnataka
-						560068</a>
-				</div>
-			</div>
-		</div>
-		<div class="copyright">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-12">
-					Copyright © 2023 360 IT HUB
-				</div>
-				<div class="col-lg-6 col-md-6 col-12">
-					<div class="allright">All Rights Reserved | <a href="terms-and-conditions.html">Terms and
-							Conditions</a> | <a href="/360-html-code/terms-and-conditions.html">Privacy Policy</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
 
 
 
@@ -323,9 +193,9 @@
 					<p>hello@360ithub.com</p>
 				</div>
 			</div>
-			<form class="contact-form" id="demoForm" action="home.php" method="post">
-				<input type="hidden" name="send">
-				<h2>Become a partner withUs</h2>
+			<form class="contact-form" id="popdemoForm" >
+				<!-- <input type="hidden" name="send"> -->
+				<h2>Become a partner with Us</h2>
 				<div class="input-group">
 					<input type="text" id="firstName" name="name" placeholder="Enter Your Name" required>
 				</div>
@@ -336,6 +206,11 @@
 				<textarea id="message" rows="5" name="message" placeholder="Write your message"
 					required></textarea>
 				<button type="submit" class="submit-btn" >SUBMIT</button>
+				<!-- <button type="submit" name="send" id="sendBtn" class="btn btn-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M23.9471 1.02871C24.0017 0.892413 24.015 0.743103 23.9855 0.599288C23.956 0.455474 23.885 0.32348 23.7812 0.21967C23.6774 0.11586 23.5454 0.0448002 23.4015 0.015299C23.2577 -0.0142021 23.1084 -0.000846891 22.9721 0.0537091L1.15162 8.78221H1.15012L0.472125 9.05221C0.34371 9.10343 0.231953 9.18915 0.149198 9.2999C0.0664433 9.41066 0.0159116 9.54213 0.00318483 9.67979C-0.00954198 9.81746 0.0160314 9.95597 0.0770801 10.08C0.138129 10.2041 0.232277 10.3088 0.349125 10.3827L0.964125 10.7727L0.965625 10.7757L8.45812 15.5427L13.2251 23.0352L13.2281 23.0382L13.6181 23.6532C13.6923 23.7696 13.7971 23.8633 13.921 23.924C14.045 23.9846 14.1833 24.0099 14.3207 23.997C14.4581 23.9842 14.5892 23.9336 14.6998 23.851C14.8103 23.7684 14.8959 23.6569 14.9471 23.5287L23.9471 1.02871ZM21.1976 3.86371L9.95662 15.1047L9.63412 14.5977C9.57503 14.5047 9.49616 14.4258 9.40312 14.3667L8.89612 14.0442L20.1371 2.80321L21.9041 2.09671L21.1991 3.86371H21.1976Z" fill="white"/>
+					</svg>
+					Send Message</button> -->
+					
 			</form>
 		</div>
 	</div>
@@ -349,6 +224,8 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript" src="assets/custom_app/360ithub/js/wow.min.js"></script>
 <script type="text/javascript" src="assets/custom_app/360ithub/js/custom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 <!-- POPUP script  -->
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
@@ -386,5 +263,153 @@
 		});
 	});
 </script>
-</body>
-</html>
+<script>
+    window.frappe = {};
+    frappe.ready_events = [];
+    frappe.ready = function(fn) {
+        frappe.ready_events.push(fn);
+    }
+    window.dev_server = {{ dev_server }};
+    window.socketio_port = {{ (frappe.socketio_port or 9000) }};
+    window.show_language_picker = {{ show_language_picker or 'false' }};
+</script>
+
+{% block base_scripts %}
+<!-- js should be loaded in body! -->
+<script>
+    frappe.boot = {{ boot }}
+    // for backward compatibility of some libs
+    frappe.sys_defaults = frappe.boot.sysdefaults;
+</script>
+{{ include_script('frappe-web.bundle.js') }}
+{% endblock %}
+ 
+{%- for link in web_include_js %}
+{{ include_script(link) }}
+{%- endfor -%}
+ 
+{%- block script %}
+    {% if colocated_js -%}
+        <script>{{ colocated_js }}</script>
+    {%- endif %}
+{%- endblock %}
+<!-- csrf_token -->
+{%- block body_include %}{{ body_include or "" }}{% endblock -%}
+<!-- PSCODE STARTS -->
+<!-- <script>
+	// Optionally, you can use JavaScript to enhance the form submission experience
+	document.getElementById("demoForm").addEventListener("submit", function (event) {
+
+		event.preventDefault(); // Prevent the default form submission
+
+		document.getElementById("sendBtn").disabled = true;
+
+		// Submit the form using AJAX
+		var formData = new FormData(this);
+
+		fetch(this.action, {
+			method: 'POST',
+			body: formData
+		})
+		.then(response => response.json())
+		.then(data => {
+		
+			if (data.success) {
+				// Show SweetAlert for success
+				Swal.fire({
+					icon: 'success',
+					title: 'Success!',
+					text: 'Sent Successfully',
+					timer: 3000, // 10 seconds
+					showConfirmButton: false
+				});
+
+				// Optionally, you can reset the form
+				this.reset();
+				document.getElementById('demoPopup').style.display = 'none';
+			} else {
+				// Show SweetAlert for failure
+				Swal.fire({
+					icon: 'error',
+					title: 'Error!',
+					text: 'Email sending failed: ' + data.error
+				});
+			}
+		})
+		.catch(error => {
+			console.error('Error:', error);
+		});
+	});
+</script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+<script>
+	
+	 $(document).ready(function() {
+		$("#demoForm").submit(function(event) {
+			event.preventDefault(); // Prevent the default form submission behavior
+	
+			// Serialize the form data
+			var formData = $(this).serialize();
+	
+			// Send the data to the server-side method using Frappe's AJAX API (frappe.call)
+			frappe.call({
+				method: "custom_app.custom_app.api.process_form_data",
+				args: {
+					form_data: formData
+				},
+				callback: function(response) {
+					if (!response.exc) {
+						
+	
+						// Reset the form
+						$("#demoForm")[0].reset();
+	
+						// Use SweetAlert for a more user-friendly notification
+						Swal.fire("Success!", "Form submitted successfully", "success");
+					} else {
+						// Display error using SweetAlert
+						Swal.fire("Error", "Error submitting form data: " + response.exc, "error");
+					}
+				}
+			});
+		});
+	});
+	
+ </script>
+ <script>
+	$(document).ready(function() {
+		$("#popdemoForm").submit(function(event) {
+			event.preventDefault(); // Prevent the default form submission behavior
+	
+			// Serialize the form data
+			var formData = $(this).serialize();
+	
+			// Send the data to the server-side method using Frappe's AJAX API (frappe.call)
+			frappe.call({
+				method: "custom_app.custom_app.api.process_form_data",
+				args: {
+					form_data: formData
+				},
+				
+				callback: function(response) {
+					if (!response.exc) {
+						
+
+						$("#popdemoForm")[0].reset();
+						Swal.fire("Success!", "Form submitted successfully", "success")
+						.then(function() {
+                            // Reload the page after the SweetAlert is closed
+                            location.reload();
+                        });
+
+					} else {
+						Swal.fire("Error", "Error submitting form data: " + response.exc, "error");
+					}
+				}
+			});
+		});
+	});
+ </script>
+ 
+{% endblock %}
+

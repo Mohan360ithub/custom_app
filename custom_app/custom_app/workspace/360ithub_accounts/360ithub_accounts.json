@@ -1,0 +1,132 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"lVBpRBR3Zb\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">LSA Accounts</span>\",\"col\":12}},{\"id\":\"VLmjfseIqX\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"-mpHFIenLS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Entry\",\"col\":3}},{\"id\":\"sEWSSKPZwW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bank Reconciliation Tool\",\"col\":3}},{\"id\":\"wt1Ua4PX8l\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bank Transaction\",\"col\":3}},{\"id\":\"yGqc_dJP2X\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Journal Entry\",\"col\":3}},{\"id\":\"Z1PZi5q1mF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chart Of Account\",\"col\":3}},{\"id\":\"dxJ5irtKht\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Balance Sheet\",\"col\":3}},{\"id\":\"UMYJi2iBZv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Profit and Loss Statement\",\"col\":3}},{\"id\":\"L72CDMDib5\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"9eh1uVOQ7s\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Sale Orders</b></span>\",\"col\":12}},{\"id\":\"01qsSPTQob\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Invoice\",\"col\":5}},{\"id\":\"DY01yL6HOj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sale Orders\",\"col\":3}},{\"id\":\"TZTNDW6Sxi\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SALE ORDER FOLLOWUP CALENDER\",\"col\":6}},{\"id\":\"tqmrTSdY09\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales order Followup\",\"col\":4}},{\"id\":\"tLhXF6eaFD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Order Payment Status\",\"col\":6}},{\"id\":\"T15raFwRTC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer Recurring Service Tracking Report\",\"col\":6}},{\"id\":\"1WxlNxVuB9\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"BWu5L-0ahq\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Supplier Details - Purchase Depatment</b></span>\",\"col\":12}},{\"id\":\"La_YrV11c6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order\",\"col\":3}},{\"id\":\"d-xAPJBB_q\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier List (Associates Partner)\",\"col\":5}},{\"id\":\"XksB7RJnzf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Invoice\",\"col\":3}},{\"id\":\"_0yU8oAEg8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Reconciliation Tool\",\"col\":4}},{\"id\":\"z-62PwnJmR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Receipt\",\"col\":4}}]",
+ "creation": "2024-02-14 10:31:51.103267",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "read-status",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "360ithub Accounts",
+ "links": [],
+ "modified": "2024-02-14 10:31:51.103267",
+ "modified_by": "Administrator",
+ "module": "custom_app",
+ "name": "360ithub Accounts",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "360ITHUB-ACCOUNTS SEN TEAM"
+  }
+ ],
+ "sequence_id": 5.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Journal Entry",
+   "link_to": "Journal Entry",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Purchase Invoice",
+   "link_to": "Purchase Invoice",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Purchase Order",
+   "link_to": "Purchase Order",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Bank Transaction",
+   "link_to": "Bank Transaction",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Payment Entry",
+   "link_to": "Payment Entry",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Balance Sheet",
+   "link_to": "Balance Sheet",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "Tree",
+   "label": "Chart Of Account",
+   "link_to": "Account",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Bank Reconciliation Tool",
+   "link_to": "Bank Reconciliation Tool",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Sale Orders",
+   "link_to": "Sales Order",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Profit and Loss Statement",
+   "link_to": "Profit and Loss Statement",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Supplier List (Associates Partner)",
+   "link_to": "Supplier",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Purchase Reconciliation Tool",
+   "link_to": "Purchase Reconciliation Tool",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Purchase Receipt",
+   "link_to": "Purchase Receipt",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "360ithub Accounts"
+}
