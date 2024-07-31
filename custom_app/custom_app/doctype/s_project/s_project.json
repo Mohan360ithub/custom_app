@@ -10,6 +10,7 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_qnqv",
+  "timer_html",
   "task_count",
   "pending_task",
   "close_task",
@@ -36,8 +37,6 @@
   "column_break_14",
   "sales_order",
   "customer_mail_id",
-  "users_section",
-  "userss",
   "section_break_18",
   "actual_start_date",
   "actual_time",
@@ -78,7 +77,13 @@
   "column_break_lcsz",
   "warranty_end_date",
   "task_details_tab",
-  "task"
+  "task",
+  "tasks_analytics_tab",
+  "tasks_analytics_html",
+  "task_by_user_html",
+  "project_user_role_tab",
+  "users_section",
+  "userss"
  ],
  "fields": [
   {
@@ -98,7 +103,7 @@
    "no_copy": 1,
    "oldfieldname": "status",
    "oldfieldtype": "Select",
-   "options": "Open\nHold\nCompleted\nCancelled",
+   "options": "Open\nHold\nCompleted\nCancelled\nClosed",
    "search_index": 1
   },
   {
@@ -544,13 +549,39 @@
    "fieldtype": "Data",
    "label": "Customer Mail ID",
    "options": "Email"
+  },
+  {
+   "fieldname": "tasks_analytics_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tasks Analytics"
+  },
+  {
+   "fieldname": "tasks_analytics_html",
+   "fieldtype": "HTML",
+   "label": "Tasks Analytics HTML"
+  },
+  {
+   "fieldname": "task_by_user_html",
+   "fieldtype": "HTML",
+   "label": "Task By User HTML"
+  },
+  {
+   "fieldname": "project_user_role_tab",
+   "fieldtype": "Tab Break",
+   "label": "Project User Role"
+  },
+  {
+   "fieldname": "timer_html",
+   "fieldtype": "HTML",
+   "label": "Timer HTML",
+   "options": "\n<div id=\"timer-container\">\n    <div id=\"timer-display\">Timer Not Started</div>\n    <button id=\"start-timer-btn\" class=\"btn btn-primary\">Start Timer</button>\n    <button id=\"stop-timer-btn\" class=\"btn btn-danger\" style=\"display:none;\">Stop Timer</button>\n</div>\n"
   }
  ],
  "icon": "fa fa-puzzle-piece",
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 4,
- "modified": "2024-02-05 17:20:32.725447",
+ "modified": "2024-07-31 12:47:47.625249",
  "modified_by": "Administrator",
  "module": "custom_app",
  "name": "S Project",
@@ -590,6 +621,7 @@
  "quick_entry": 1,
  "search_fields": "project_name,customer, status, priority, is_active",
  "show_name_in_global_search": 1,
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

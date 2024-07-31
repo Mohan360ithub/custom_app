@@ -58,6 +58,11 @@ app_license = "mit"
 # Jinja
 # ----------
 
+
+# "whitelisted_methods": {
+#     "custom_app.custom_app.jobapply": True
+# }
+
 # add methods and filters to jinja environment
 # jinja = {
 # 	"methods": "custom_app.utils.jinja_methods",
@@ -133,23 +138,39 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"custom_app.tasks.all"
-# 	],
-# 	"daily": [
-# 		"custom_app.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"custom_app.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"custom_app.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"custom_app.tasks.monthly"
-# 	],
-# }
+
+
+
+
+
+
+scheduler_events = {
+
+    "cron":{
+        "00 23 * * *":
+            [
+            "custom_app.custom_attendance.checkin_out_for_missed_logs"
+            ],
+            
+    },
+
+
+	# "all": [
+	# 	"custom_app.tasks.all"
+	# ],
+	# "daily": [s
+	# 	"custom_app.tasks.daily"
+	# ],
+	# "hourly": [
+	# 	"custom_app.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"custom_app.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"custom_app.tasks.monthly"
+	# ],
+}
 
 # Testing
 # -------

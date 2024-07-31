@@ -1,0 +1,169 @@
+{% extends "templates/custom_web.html" %}
+{% block content %}
+<style>
+    .listings{
+        padding-top: 120px;
+        padding-bottom: 90px;
+    }
+    .align-items-center {
+    background-color: #00455f;
+    padding: 20px;
+}
+    .text-primary {
+    color: #ffffff!important;
+}
+</style>
+
+
+    
+
+<!-- Add New User Modal Start -->
+<div class="modal fade" tabindex="-1" id="addNewUserModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add New User</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="add-user-form" class="p-2" novalidate>
+            <div class="row mb-3 gx-3">
+              <div class="col">
+                <input type="text" name="fname" class="form-control form-control-lg" placeholder="Enter First Name" required>
+                <div class="invalid-feedback">First name is required!</div>
+              </div>
+
+              <div class="col">
+                <input type="text" name="lname" class="form-control form-control-lg" placeholder="Enter Last Name" required>
+                <div class="invalid-feedback">Last name is required!</div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter E-mail" required>
+              <div class="invalid-feedback">E-mail is required!</div>
+            </div>
+
+            <div class="mb-3">
+              <input type="tel" name="phone" class="form-control form-control-lg" placeholder="Enter Phone" required>
+              <div class="invalid-feedback">Phone is required!</div>
+            </div>
+
+            <div class="mb-3">
+              <input type="submit" value="Add User" class="btn btn-primary btn-block btn-lg" id="add-user-btn">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Add New User Modal End -->
+
+ 
+  <!-- Edit User Modal End -->
+  <div class="container listings">
+    <div class="row mt-4">
+      <div class="col-lg-12 d-flex justify-content-between align-items-center">
+        <div>
+          <h4 class="text-primary">Support Tickets</h4>
+        </div>
+        <div>
+          <a href="/support_ticket" class="btn btn-primary" type="button"  >New Ticket</a>
+          <!-- <button class="btn btn-danger" type="button" id="customLogoutBtn">Logout</button> -->
+          <a href="/?cmd=web_logout" class="btn btn-danger" type="button" id="customLogoutBtn">Logout</a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-12">
+        <div id="showAlert"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="table-responsive">
+          {% if issues %}
+          <table class="table table-striped table-bordered text-center">
+            <thead>
+                <tr>
+                    <th>Ticket ID</th>
+                    <th>Project</th>
+                    <th>Subject</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for issue in issues %}
+                    <tr>
+                        <td>{{ issue.name }}</td>
+                        <td>{{ issue.project_name }}</td>
+                        <td>{{ issue.subject }}</td>
+                        <td>{{ issue.status }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p>No issues found.</p>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER START ========== -->
+ 
+<script type="text/javascript" src="assets/custom_app/360ithub/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="assets/custom_app/360ithub/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/custom_app/360ithub/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/custom_app/360ithub/js/slick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="assets/custom_app/360ithub/js/wow.min.js"></script>
+    <script type="text/javascript" src="assets/custom_app/360ithub/js/custom.js"></script>
+    
+ 
+
+</body>
+<script>
+    window.frappe = {};
+    frappe.ready_events = [];
+    frappe.ready = function(fn) {
+        frappe.ready_events.push(fn);
+    }
+    window.dev_server = {{ dev_server }};
+    window.socketio_port = {{ (frappe.socketio_port or 9000) }};
+    window.show_language_picker = {{ show_language_picker or 'false' }};
+</script>
+
+{% block base_scripts %}
+<!-- js should be loaded in body! -->
+<script>
+    frappe.boot = {{ boot }}
+    // for backward compatibility of some libs
+    frappe.sys_defaults = frappe.boot.sysdefaults;
+</script>
+{{ include_script('frappe-web.bundle.js') }}
+{% endblock %}
+ 
+{%- for link in web_include_js %}
+{{ include_script(link) }}
+{%- endfor -%}
+ 
+{%- block script %}
+    {% if colocated_js -%}
+        <script>{{ colocated_js }}</script>
+    {%- endif %}
+{%- endblock %}
+<!-- csrf_token -->
+{%- block body_include %}{{ body_include or "" }}{% endblock -%}
+<!-- JavaScript to handle logout -->
+<!-- JavaScript to handle logout -->
+<!-- JavaScript to handle logout -->
+<!-- JavaScript to handle logout -->
+<!-- JavaScript to handle logout -->
+
+
+
+
+{% endblock %}
